@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeLens": false,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnType": true,
+    "prettier.singleQuote": false,
+    "prettier.arrowParens": "always",
+    "solidity.linter": "solhint",
+    "solidity.enabledSolium": false,
+    "solidity.compileUsingRemoteVersion": "0.5.11+commit.c082d0b4.Emscripten.clang",
+    "solidity.enabledAsYouTypeCompilationErrorCheck": true,
+    "solidity.validationDelay": 1500,
+    "cmake.configureOnOpen": false
+}
