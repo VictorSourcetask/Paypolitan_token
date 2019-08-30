@@ -206,7 +206,7 @@ contract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {
         uint256 vestingAmount,
         uint32 startDay,
         uint32 duration,
-        uint32 cliffInterval,
+        uint32 cliffDuration,
         uint32 interval,
         bool isRevocable
     ) public onlyGrantor returns (bool ok) {
@@ -242,9 +242,17 @@ contract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {
         uint32 interval,
         bool isRevocable
     ) public onlyGrantor onlyExistingAccount(beneficiary) returns (bool ok) {
-        return grantVestingTokens(
-            beneficiary, totalAmount, vestingAmount, startDay, duration, cliffDuration, interval, isRevocable);
-        )
+        return
+            grantVestingTokens(
+                beneficiary,
+                totalAmount,
+                vestingAmount,
+                startDay,
+                duration,
+                cliffDuration,
+                interval,
+                isRevocable
+            );
     }
 
     /// Check vesting
@@ -256,44 +264,42 @@ contract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {
         return uint32(block.timestamp / SECONDS_PER_DAY);
     }
 
-    function _effectiveDay(uint onDayOrToday) internal view returns (uint32 dayNumber) {
+    function _effectiveDay(uint32 onDayOrToday) internal view returns (uint32 dayNumber) {
         return onDayOrToday == 0 ? today() : onDayOrToday;
     }
-
 
     /**
         @dev Determines the number of tokens that have not vested in the given account
 
         The math is: not vested amount = vesting amount * (end date - on date) / (end date - start date)
 
-        @param grantorHolder = The account to check
+        @param grantHolder = The account to check
         @param onDayOrToday = the day to check for, in days since UNIX epoch.
                               Can pass the special value 0 to indicate today
-     */
-    function _getNotVestedAmount(
-        address grantHolder,
-        uint32 onDayOrToday
-    ) internal view returns (uint256 amountNotVested) {
+    */
+    function _getNotVestedAmount(address grantHolder, uint32 onDayOrToday)
+        internal
+        view
+        returns (uint256 amountNotVested)
+    {
         tokenGrant storage grant = _tokenGrants[grantHolder];
         vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];
         uint32 onDay = _effectiveDay(onDayOrToday);
-        
+
         /// if there's not schedule, or before the vesting cliff, then the full amount is not vested
-        if(!grant.isActive || onDay < grant.startDay + vesting.cliffDuration) {
+        if (!grant.isActive || onDay < grant.startDay + vesting.cliffDuration) {
             // none are vested (all are not vested)
             return grant.amount;
-        }
-        // if after end of vesting, then the not vested ammuntis zero (all are vested).
-        else if (onDay >= grant.startDay + vesting.duration) {
+        } else if (onDay >= grant.startDay + vesting.duration) {
+            // if after end of vesting, then the not vested ammuntis zero (all are vested).
             // all are vested (none are not vested)
             return uint256(0);
-        }
-        // otherwise a fractional amount is vested
-        else {
+        } else {
+            // otherwise a fractional amount is vested
             // compute the exact number of vested
             uint32 daysVested = onDay - grant.startDay;
             // adjust result rounding down to take into consideration the interval
-            uint32 effectiveDaysVested = (daysVested / vesting.itnerval) * vesting.interval;
+            uint32 effectiveDaysVested = (daysVested / vesting.interval) * vesting.interval;
 
             // compute the fraction vested from schedule using 224.32 fixed pint math for date range ratio.
             // Note: This is safe in 256-bit math because max value of X billion tokens = X*10^27 wei, and
@@ -302,14 +308,203 @@ contract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {
             uint256 vested = grant.amount.mul(effectiveDaysVested).div(vesting.duration);
             return grant.amount.sub(vested);
         }
+    }
 
-        function _getAvailableAmount(
-            address grantHoler, uint32 onDay
-        ) internal view returns (uint256 amountAvailable) {
-            uint256 totalTokens = balanceOf(grantHolder);
-            uint256 vested = totalTokens.sub(_getNotVestedAmount(grantHolder, onDay));
-            return vested;
-        }
+    /**
+        @dev computes the amount of funds in the given account which are available for use as of given day.
+        If there's no vesting schedule then 0 tokens are considered to be vested nad this just returns the full account balance
+
+        available amount = total funds - not vested amount
+
+        @param grantHolder the account to check
+        @param onDay the day to check for, in days since the UNIX epoch
+    */
+    function _getAvailableAmount(address grantHolder, uint32 onDay)
+        internal
+        view
+        returns (uint256 amountAvailable)
+    {
+        uint256 totalTokens = balanceOf(grantHolder);
+        uint256 vested = totalTokens.sub(_getNotVestedAmount(grantHolder, onDay));
+        return vested;
+    }
+
+    function vestingForAccountAsOf(address grantHolder, uint32 onDayOrToday)
+        public
+        view
+        onlyGrantorOrSelf(grantHolder)
+        returns (
+            uint256 amountVested,
+            uint256 amountNotVested,
+            uint256 amountOfGrant,
+            uint32 vestStartDay,
+            uint32 vestDuration,
+            uint32 cliffDuration,
+            uint32 vestIntervalDays,
+            bool isActive,
+            bool wasRevoked
+        )
+    {
+        tokenGrant storage grant = _tokenGrants[grantHolder];
+        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];
+        uint256 notVestedAmount = _getNotVestedAmount(grantHolder, onDayOrToday);
+        uint256 grantAmount = grant.amount;
+
+        return (
+            grantAmount.sub(notVestedAmount),
+            notVestedAmount,
+            grantAmount,
+            grant.startDay,
+            vesting.duration,
+            vesting.cliffDuration,
+            vesting.interval,
+            grant.isActive,
+            grant.wasRevoked
+        );
+    }
+
+    /**
+        @dev return all the information about the grant's vesting as of the given day
+        for the current account to be called by the account holder
+
+        @param onDayOrToday - the day to check for. Can pass the special value 0 to indicate today
+        @return - A touple with the following values
+            amountVested - the amount of the vestingAmount that is vested
+            amountNotVested - the amount that is vested (equal to vestingAmount - vestedAmount)
+            amountOfGrant - the amount of tokens subject to vesting
+            vestStartDay - starting day of the grant
+            cliffDuration - duration of the cliff
+            vestDuration - grant duration in days
+            vestIntervalDays - number of days between vesting periods
+            isActive - true if the vesting schedule is currently active
+            wasRevoked - true id the vesting schedule was revoked
+     */
+    function vestingAsOf(uint32 onDayOrToday)
+        public
+        view
+        returns (
+            uint256 amountVested,
+            uint256 amountNotVested,
+            uint256 amountOfGrant,
+            uint32 vestStartDay,
+            uint32 vestDuration,
+            uint32 cliffDuration,
+            uint32 vestIntervalDays,
+            bool isActive,
+            bool wasRevoked
+        )
+    {
+        return vestingForAccountAsOf(msg.sender, onDayOrToday);
+    }
+
+    /**
+        @dev returns true if the account has sufficient funds available to cover the given amount, 
+        including consideration for vesting tokens
+
+        @param account - the account to check
+        @param amount - the required amount of vested funds
+        @param onDay - the day to check for, in days since the UNIX epoch
+     */
+    function _fundsAreAvailableOn(address account, uint256 amount, uint32 onDay)
+        internal
+        view
+        returns (bool ok)
+    {
+        return (amount <= _getAvailableAmount(account, onDay));
+    }
+
+    /**
+        @dev modifier to make a function callable only when the account is sufficiently vested right now
+
+        @param account - account to check
+        @param amount - the required amount of vested funds
+     */
+    modifier onlyIfFundsAvailableNow(address account, uint256 amount) {
+        // distingush insufficient overall balance from insufficient vested funds balance in failure msg
+        require(
+            _fundsAreAvailableOn(account, amount, today()),
+            balanceOf(account) < amount ? "insufficient funds" : "insufucient vested funds"
+        );
+        _;
+    }
+
+    //=====================================================================================================
+    // === Grant revocation
+    //=====================================================================================================
+
+    /**
+        @dev if an account has a revocable grant, this forces the grant to end based on computing
+        the amount vested up to the given date. All tokens that would no longer vest are returned
+        to the account of the original grantor
+
+        @param grantHolder - address to which tokens will be granted
+        @param onDay - the day upon which the vesting schedule will be effectively terminated
+     */
+    function revokeGrant(address grantHolder, uint32 onDay) public onlyGrantor returns (bool ok) {
+        tokenGrant storage grant = _tokenGrants[grantHolder];
+        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];
+        uint256 notVestedAmount;
+
+        // make sure grantor can only revoke from own pool
+        require(msg.sender == owner() || msg.sender == grant.grantor, "not allowed");
+
+        // make sure a vesting schedule has previously been set
+        require(grant.isActive, "no active vesting schedule");
+
+        // make sure is revocable
+        require(vesting.isRevocable, "irrevocable");
+
+        // fail on likely erroneous input
+        require(onDay <= grant.startDay + vesting.duration, "no effect");
+
+        // don't let grantor revoke any portion of the vested amount
+        require(onDay >= today(), "cannot revoke vested holdings");
+
+        notVestedAmount = _getNotVestedAmount(grantHolder, onDay);
+
+        // use ERC20 _approve()  to forcibly approve grantor to take back non-vested tokens from grantHolder
+        _approve(grantHolder, grant.grantor, notVestedAmount);
+
+        // Emits and approval event
+        transferFrom(grantHolder, grant.grantor, notVestedAmount);
+
+        // emits a tansfer and approval event
+        // kill the grant by updating wasRevoked and isActive
+        _tokenGrants[grantHolder].wasRevoked = true;
+        _tokenGrants[grantHolder].isActive = false;
+
+        emit GrantRevoked(grantHolder, onDay);
+        // emits GrantRevoked event
+
+        return true;
+    }
+
+    //======================================================================================================
+    //===   Overridden ERC20 functionality
+    //======================================================================================================
+
+    /**
+        @dev methods transfer() and approve() require an additional available funds check
+        to prevent spending held but not-vested tokens. Note that transferFrom() does not have this
+        additional check because approved funds come from an already set-aside allowance, not from the wallet.
+     */
+    function transfer(address to, uint256 value)
+        public
+        onlyIfFundsAvailableNow(msg.sender, value)
+        returns (bool ok)
+    {
+        return super.transfer(to, value);
+    }
+
+    /**
+        @dev additional available funds check to prevent spending but not-vested tokens
+     */
+    function approve(address spender, uint256 value)
+        public
+        onlyIfFundsAvailableNow(msg.sender, value)
+        returns (bool ok)
+    {
+        return super.approve(spender, value);
     }
 
 }
