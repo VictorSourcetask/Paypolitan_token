@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.7;
 
 import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol";
 import "./VerifiedAccount.sol";

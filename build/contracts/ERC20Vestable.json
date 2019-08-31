@@ -873,12 +873,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getInstrinsicVestingSchedule\",\"outputs\":[{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isGrantor\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"},{\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"revokeGrant\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"sender\",\"type\":\"address\"},{\"name\":\"recipient\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"removeGrantor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"beneficiary\",\"type\":\"address\"},{\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"name\":\"startDay\",\"type\":\"uint32\"},{\"name\":\"duration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"interval\",\"type\":\"uint32\"},{\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"safeGrantVestingTokens\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeTransfer\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"},{\"name\":\"isUniformGrantor\",\"type\":\"bool\"}],\"name\":\"addGrantor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isUniformGrantor\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"beneficiary\",\"type\":\"address\"},{\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"name\":\"startDay\",\"type\":\"uint32\"},{\"name\":\"duration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"interval\",\"type\":\"uint32\"},{\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"grantVestingTokens\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getIntrinsicVestingSchedule\",\"outputs\":[{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"today\",\"outputs\":[{\"name\":\"dayNumber\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isRegistered\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"},{\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingForAccountAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"registerAccount\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeApprove\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"duration\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"isRevokable\",\"type\":\"bool\"}],\"name\":\"VestingScheduleCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"startDay\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"grantor\",\"type\":\"address\"}],\"name\":\"VestingTokensGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"grantHolder\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"GrantRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"GrantorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"GrantorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AccountRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"Contract which gives subclass contracts the ability to act as a pool of funds for allocating tokens to any number of other addresses. Token grants support the ability to vest over time in accordance a predefined vesting schedule. A given wallet can receive no more than one token grant. Tokens are transferred from the pool to the recipient at the time of grant, but the recipient will only be able to transfer tokens out of their wallet after they have vested. Transfers of  non vested tokens are prevented. Two types of token grants are supported: - Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange for value, such as with tokens that have been purchased in an IEO - Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder, such as with employee grants that are given as compensation\",\"methods\":{\"allowance(address,address)\":{\"details\":\"See `IERC20.allowance`.\"},\"approve(address,uint256)\":{\"details\":\"additional available funds check to prevent spending but not-vested tokens\"},\"balanceOf(address)\":{\"details\":\"See `IERC20.balanceOf`.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"getIntrinsicVestingSchedule(address)\":{\"details\":\"returns all the information about the vesting schedule directly associated with the given account. This can be used to double check that a uniform grantor has been set up with a correct vesting schedule. Also, recipients of standard (non-uniform) grants can use this. This method is only callable by the account holder or a grantor, so this is mainly intended for administrative use. Holders of uniform grants must use vestingAsOf() to view their vesting schedule, as it is stored in the grantor account\",\"params\":{\"grantHolder\":\"= The address to do this for. the special value 0 to indicate today\"},\"return\":\"= Atuple with the following values: vestDuration = grant duration in days cliffDuration = duration of the cliff vestIntervalDays = number of days between vesting periods\"},\"grantVestingTokens(address,uint256,uint256,uint32,uint32,uint32,uint32,bool)\":{\"details\":\"Immediately grants tokens to an address, including a portion that will vest over time according to a set vesting schedule. The overall duration and cliff duration of the grant must be an even multiple of the vesting interval.\",\"params\":{\"beneficiary\":\"= Address to which tokens will be granted.\",\"cliffDuration\":\"= Duration of the cliff, with respect to the grant start day, in days.\",\"duration\":\"= Duration of the vesting schedule, with respect to the grant start day, in days.\",\"interval\":\"= Number of days between vesting increases.\",\"isRevocable\":\"= True if the grant can be revoked (i.e. was a gift) or false if it cannot  be revoked (i.e. tokens were purchased).\",\"startDay\":\"= Start day of the grant's vesting schedule, in days since the UNIX epoch  (start of day). The startDay may be given as a date in the future or in the past, going as far  back as year 2000.\",\"totalAmount\":\"= Total number of tokens to deposit into the account.\",\"vestingAmount\":\"= Out of totalAmount, the number of tokens subject to vesting.\"}},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address.\"},\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"revokeGrant(address,uint32)\":{\"details\":\"if an account has a revocable grant, this forces the grant to end based on computing the amount vested up to the given date. All tokens that would no longer vest are returned to the account of the original grantor\",\"params\":{\"grantHolder\":\"- address to which tokens will be granted\",\"onDay\":\"- the day upon which the vesting schedule will be effectively terminated\"}},\"safeGrantVestingTokens(address,uint256,uint256,uint32,uint32,uint32,uint32,bool)\":{\"details\":\"this variant only grants tokens if the beneficiary account has previously self-registered\"},\"today()\":{\"details\":\"returns the day number of the current day, in days since the UNIX epoch\"},\"totalSupply()\":{\"details\":\"See `IERC20.totalSupply`.\"},\"transfer(address,uint256)\":{\"details\":\"methods transfer() and approve() require an additional available funds check to prevent spending held but not-vested tokens. Note that transferFrom() does not have this additional check because approved funds come from an already set-aside allowance, not from the wallet.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See `IERC20.transferFrom`.     * Emits an `Approval` event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of `ERC20`;     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `value`. - the caller must have allowance for `sender`'s tokens of at least `amount`.\"},\"vestingAsOf(uint32)\":{\"details\":\"return all the information about the grant's vesting as of the given day for the current account to be called by the account holder\",\"params\":{\"onDayOrToday\":\"- the day to check for. Can pass the special value 0 to indicate today\"},\"return\":\"- A touple with the following values amountVested - the amount of the vestingAmount that is vested amountNotVested - the amount that is vested (equal to vestingAmount - vestedAmount) amountOfGrant - the amount of tokens subject to vesting vestStartDay - starting day of the grant cliffDuration - duration of the cliff vestDuration - grant duration in days vestIntervalDays - number of days between vesting periods isActive - true if the vesting schedule is currently active wasRevoked - true id the vesting schedule was revoked\"}},\"title\":\"Contract for grantable ERC20 token vesting schedules\"},\"userdoc\":{\"methods\":{\"registerAccount()\":{\"notice\":\"this registers the calling wallet address as a known address. Operations that transfer responsibility may require the target account to be a registered account to protect the system from getting into a state where administration or a large amount of funds can become forever innaccesible\"},\"renounceOwnership()\":{\"notice\":\"overridden ERC20 functionality ensure there is no way for the contract to end up with no owner\"},\"safeTransfer(address,uint256)\":{\"notice\":\"Safe ERC20 methods\"},\"transferOwnership(address)\":{\"notice\":\"allows the current owner to transfer control of the contract to a newOwner\"}},\"notice\":\"Adds to an ERC20 support for grantor wallets, ehich are able to grant vesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\"}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol\":\"ERC20Vestable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol\":{\"keccak256\":\"0x262de2940c140236ae6d1edb2701e145b77ec155cec380323da61eaf3e31da73\",\"urls\":[\"bzzr://b697e4c2ae4017fa087a75984398d979670950c7fc88ac0a0281d66b4fd08c95\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/GrantorRole.sol\":{\"keccak256\":\"0x96c73553d49db3bd5d18292c13dbbe00f51f28d3a90302f9345cd791bfbd51f4\",\"urls\":[\"bzzr://667fba4d4d297b6a96e456493c62214aac2bbb2f8d5f9cb679f37c59b42eef68\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":{\"keccak256\":\"0x8fded3f3bc3fed49475e521c98b072ca2bfa7d683b4e3cf4bbccde10aa59cdfd\",\"urls\":[\"bzzr://5d15bd6a670bc566b5813ca2a72d87710cd15d66c8820e9047a6a18250ad49eb\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/VerifiedAccount.sol\":{\"keccak256\":\"0x69979954210214e605d63ef19d387605f286ee9dee920912a4fdcc2bc0323aa2\",\"urls\":[\"bzzr://b366be2972fe2edb694c3648cca60fe43736f41614b8e66dc5eae3b0eb7a7d13\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/access/roles/PauserRole.sol\":{\"keccak256\":\"0xf6826c684d51ca28db5293ce11a54c5cca1c757b6cd32b87613833c65086f995\",\"urls\":[\"bzzr://01b2756ab5b41b1d7ccadfeac53fbdce9c889263f1e011329c300c5fa3fda65f\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/lifecycle/Pausable.sol\":{\"keccak256\":\"0x609f8cb524cd6b502624c79c099ec2fc6f23eef57b5c38e28efd82490875f37e\",\"urls\":[\"bzzr://46ee461a64298ef418bd100df1301355f4dc9ffeb06fe7a39aaf98d45c0bf988\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzzr://d12a11272051eb6586de8f7e0a82c04a98c9984ce8b2a6cf1ee439f65aba29a9\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x852793a3c2f86d336a683b30d688ec3dcfc57451af5a2bf5975cda3b7191a901\",\"urls\":[\"bzzr://07fb42206812a17c1f71e548cfa5cec6f9aa1ae0ca5df870718ca4aa9759d1a5\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol\":{\"keccak256\":\"0xc4973487824e5855e78e27d685b387566df52ea4b0854ba60b8703b533de47d4\",\"urls\":[\"bzzr://299d2f2c37a1b0cc8b15927fc516cc7f8a8f48e246512b3b3880bd3e4f0220d4\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getInstrinsicVestingSchedule\",\"outputs\":[{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isGrantor\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"},{\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"revokeGrant\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"sender\",\"type\":\"address\"},{\"name\":\"recipient\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"removeGrantor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"beneficiary\",\"type\":\"address\"},{\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"name\":\"startDay\",\"type\":\"uint32\"},{\"name\":\"duration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"interval\",\"type\":\"uint32\"},{\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"safeGrantVestingTokens\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeTransfer\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"},{\"name\":\"isUniformGrantor\",\"type\":\"bool\"}],\"name\":\"addGrantor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isUniformGrantor\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"beneficiary\",\"type\":\"address\"},{\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"name\":\"startDay\",\"type\":\"uint32\"},{\"name\":\"duration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"interval\",\"type\":\"uint32\"},{\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"grantVestingTokens\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getIntrinsicVestingSchedule\",\"outputs\":[{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"today\",\"outputs\":[{\"name\":\"dayNumber\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isRegistered\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"},{\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingForAccountAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"registerAccount\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"spender\",\"type\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"safeApprove\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"duration\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"isRevokable\",\"type\":\"bool\"}],\"name\":\"VestingScheduleCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"startDay\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"grantor\",\"type\":\"address\"}],\"name\":\"VestingTokensGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"grantHolder\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"GrantRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"GrantorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"GrantorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AccountRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"Contract which gives subclass contracts the ability to act as a pool of funds for allocating tokens to any number of other addresses. Token grants support the ability to vest over time in accordance a predefined vesting schedule. A given wallet can receive no more than one token grant. Tokens are transferred from the pool to the recipient at the time of grant, but the recipient will only be able to transfer tokens out of their wallet after they have vested. Transfers of  non vested tokens are prevented. Two types of token grants are supported: - Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange for value, such as with tokens that have been purchased in an IEO - Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder, such as with employee grants that are given as compensation\",\"methods\":{\"allowance(address,address)\":{\"details\":\"See `IERC20.allowance`.\"},\"approve(address,uint256)\":{\"details\":\"additional available funds check to prevent spending but not-vested tokens\"},\"balanceOf(address)\":{\"details\":\"See `IERC20.balanceOf`.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"getIntrinsicVestingSchedule(address)\":{\"details\":\"returns all the information about the vesting schedule directly associated with the given account. This can be used to double check that a uniform grantor has been set up with a correct vesting schedule. Also, recipients of standard (non-uniform) grants can use this. This method is only callable by the account holder or a grantor, so this is mainly intended for administrative use. Holders of uniform grants must use vestingAsOf() to view their vesting schedule, as it is stored in the grantor account\",\"params\":{\"grantHolder\":\"= The address to do this for. the special value 0 to indicate today\"},\"return\":\"= Atuple with the following values: vestDuration = grant duration in days cliffDuration = duration of the cliff vestIntervalDays = number of days between vesting periods\"},\"grantVestingTokens(address,uint256,uint256,uint32,uint32,uint32,uint32,bool)\":{\"details\":\"Immediately grants tokens to an address, including a portion that will vest over time according to a set vesting schedule. The overall duration and cliff duration of the grant must be an even multiple of the vesting interval.\",\"params\":{\"beneficiary\":\"= Address to which tokens will be granted.\",\"cliffDuration\":\"= Duration of the cliff, with respect to the grant start day, in days.\",\"duration\":\"= Duration of the vesting schedule, with respect to the grant start day, in days.\",\"interval\":\"= Number of days between vesting increases.\",\"isRevocable\":\"= True if the grant can be revoked (i.e. was a gift) or false if it cannot  be revoked (i.e. tokens were purchased).\",\"startDay\":\"= Start day of the grant's vesting schedule, in days since the UNIX epoch  (start of day). The startDay may be given as a date in the future or in the past, going as far  back as year 2000.\",\"totalAmount\":\"= Total number of tokens to deposit into the account.\",\"vestingAmount\":\"= Out of totalAmount, the number of tokens subject to vesting.\"}},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller.     * This is an alternative to `approve` that can be used as a mitigation for problems described in `IERC20.approve`.     * Emits an `Approval` event indicating the updated allowance.     * Requirements:     * - `spender` cannot be the zero address.\"},\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"revokeGrant(address,uint32)\":{\"details\":\"if an account has a revocable grant, this forces the grant to end based on computing the amount vested up to the given date. All tokens that would no longer vest are returned to the account of the original grantor\",\"params\":{\"grantHolder\":\"- address to which tokens will be granted\",\"onDay\":\"- the day upon which the vesting schedule will be effectively terminated\"}},\"safeGrantVestingTokens(address,uint256,uint256,uint32,uint32,uint32,uint32,bool)\":{\"details\":\"this variant only grants tokens if the beneficiary account has previously self-registered\"},\"today()\":{\"details\":\"returns the day number of the current day, in days since the UNIX epoch\"},\"totalSupply()\":{\"details\":\"See `IERC20.totalSupply`.\"},\"transfer(address,uint256)\":{\"details\":\"methods transfer() and approve() require an additional available funds check to prevent spending held but not-vested tokens. Note that transferFrom() does not have this additional check because approved funds come from an already set-aside allowance, not from the wallet.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See `IERC20.transferFrom`.     * Emits an `Approval` event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of `ERC20`;     * Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `value`. - the caller must have allowance for `sender`'s tokens of at least `amount`.\"},\"vestingAsOf(uint32)\":{\"details\":\"return all the information about the grant's vesting as of the given day for the current account to be called by the account holder\",\"params\":{\"onDayOrToday\":\"- the day to check for. Can pass the special value 0 to indicate today\"},\"return\":\"- A touple with the following values amountVested - the amount of the vestingAmount that is vested amountNotVested - the amount that is vested (equal to vestingAmount - vestedAmount) amountOfGrant - the amount of tokens subject to vesting vestStartDay - starting day of the grant cliffDuration - duration of the cliff vestDuration - grant duration in days vestIntervalDays - number of days between vesting periods isActive - true if the vesting schedule is currently active wasRevoked - true id the vesting schedule was revoked\"}},\"title\":\"Contract for grantable ERC20 token vesting schedules\"},\"userdoc\":{\"methods\":{\"registerAccount()\":{\"notice\":\"this registers the calling wallet address as a known address. Operations that transfer responsibility may require the target account to be a registered account to protect the system from getting into a state where administration or a large amount of funds can become forever innaccesible\"},\"renounceOwnership()\":{\"notice\":\"overridden ERC20 functionality ensure there is no way for the contract to end up with no owner\"},\"safeTransfer(address,uint256)\":{\"notice\":\"Safe ERC20 methods\"},\"transferOwnership(address)\":{\"notice\":\"allows the current owner to transfer control of the contract to a newOwner\"}},\"notice\":\"Adds to an ERC20 support for grantor wallets, ehich are able to grant vesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\"}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol\":\"ERC20Vestable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol\":{\"keccak256\":\"0xa5177334b855a2bebdaaec87afba1cc716bc819414eff10ce99fdcef43663e22\",\"urls\":[\"bzzr://78f71ab387727c8b7af14a7041792546980433818856c50180a39889bcf74a74\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/GrantorRole.sol\":{\"keccak256\":\"0x96c73553d49db3bd5d18292c13dbbe00f51f28d3a90302f9345cd791bfbd51f4\",\"urls\":[\"bzzr://667fba4d4d297b6a96e456493c62214aac2bbb2f8d5f9cb679f37c59b42eef68\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":{\"keccak256\":\"0x8fded3f3bc3fed49475e521c98b072ca2bfa7d683b4e3cf4bbccde10aa59cdfd\",\"urls\":[\"bzzr://5d15bd6a670bc566b5813ca2a72d87710cd15d66c8820e9047a6a18250ad49eb\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/VerifiedAccount.sol\":{\"keccak256\":\"0x69979954210214e605d63ef19d387605f286ee9dee920912a4fdcc2bc0323aa2\",\"urls\":[\"bzzr://b366be2972fe2edb694c3648cca60fe43736f41614b8e66dc5eae3b0eb7a7d13\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/access/roles/PauserRole.sol\":{\"keccak256\":\"0xf6826c684d51ca28db5293ce11a54c5cca1c757b6cd32b87613833c65086f995\",\"urls\":[\"bzzr://01b2756ab5b41b1d7ccadfeac53fbdce9c889263f1e011329c300c5fa3fda65f\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/lifecycle/Pausable.sol\":{\"keccak256\":\"0x609f8cb524cd6b502624c79c099ec2fc6f23eef57b5c38e28efd82490875f37e\",\"urls\":[\"bzzr://46ee461a64298ef418bd100df1301355f4dc9ffeb06fe7a39aaf98d45c0bf988\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzzr://d12a11272051eb6586de8f7e0a82c04a98c9984ce8b2a6cf1ee439f65aba29a9\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x852793a3c2f86d336a683b30d688ec3dcfc57451af5a2bf5975cda3b7191a901\",\"urls\":[\"bzzr://07fb42206812a17c1f71e548cfa5cec6f9aa1ae0ca5df870718ca4aa9759d1a5\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol\":{\"keccak256\":\"0xc4973487824e5855e78e27d685b387566df52ea4b0854ba60b8703b533de47d4\",\"urls\":[\"bzzr://299d2f2c37a1b0cc8b15927fc516cc7f8a8f48e246512b3b3880bd3e4f0220d4\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\n\nimport \"../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol\";\nimport \"./VerifiedAccount.sol\";\nimport \"./GrantorRole.sol\";\nimport \"./IERC20Vestable.sol\";\n\n/**\n    @title Contract for grantable ERC20 token vesting schedules\n    @notice Adds to an ERC20 support for grantor wallets, ehich are able to grant\n    vesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\n\n    @dev Contract which gives subclass contracts the ability to act as a pool of funds for\n    allocating tokens to any number of other addresses. Token grants support the ability\n    to vest over time in accordance a predefined vesting schedule. A given wallet can receive\n    no more than one token grant.\n\n    Tokens are transferred from the pool to the recipient at the time of grant, but the recipient\n    will only be able to transfer tokens out of their wallet after they have vested. Transfers of \n    non vested tokens are prevented.\n    \n    Two types of token grants are supported:\n    - Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange\n    for value, such as with tokens that have been purchased in an IEO\n    - Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder,\n    such as with employee grants that are given as compensation\n */\n\ncontract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {\n    using SafeMath for uint256;\n\n    /// date-related constants for sanity checking dates to reject obvious erroneus input\n    /// and conversions from seconds to days and years that are more ore less leap year-aware\n    uint32 private constant THOUSAND_YEARS_DAYS = 365243;\n    uint32 private constant TEN_YEARS_DAYS = THOUSAND_YEARS_DAYS / 100;\n    uint32 private constant SECONDS_PER_DAY = 24 * 60 * 60;\n    uint32 private constant JAN_1_2000_SECONDS = 946684800;\n    uint32 private constant JAN_1_2000_DAYS = JAN_1_2000_SECONDS / SECONDS_PER_DAY;\n    uint32 private constant JAN_1_3000_DAYS = JAN_1_2000_DAYS + THOUSAND_YEARS_DAYS;\n\n    struct vestingSchedule {\n        bool isValid; /// true if an entry exists and is valid\n        bool isRevocable; /// true if the vesting option is revocable (a gift), false if irrevocable (paid)\n        uint32 cliffDuration; /// duration of the cliff, with respect to the start day, in days\n        uint32 duration; /// duration of the vesting schedule, with respect to the grant start day, in days\n        uint32 interval; /// duration in days of the vesting interval\n    }\n\n    struct tokenGrant {\n        bool isActive; /// true if this vesting entry is active adn in-effect entry\n        bool wasRevoked; /// true if this vesting schedule was revoked\n        uint32 startDay; /// start day of the grant, in days since the UNIX epoch\n        uint256 amount; /// total number of tokens that vest\n        address vestingLocation; /// address of the wallet that is holding the vesting schedule\n        address grantor; /// grantor that made the grant\n    }\n\n    mapping(address => vestingSchedule) private _vestingSchedules;\n    mapping(address => tokenGrant) private _tokenGrants;\n\n    ///=========================================================================\n    /// Methods for administratively creating a vesting schedule for an account\n    ///=========================================================================\n    function _setVestingSchedule(\n        address vestingLocation,\n        uint32 cliffDuration,\n        uint32 duration,\n        uint32 interval,\n        bool isRevocable\n    ) internal returns (bool ok) {\n        /// check for a valid vesting schedule given (disallow absurd values to reject likely bad input)\n        require(\n            duration > 0 && duration <= TEN_YEARS_DAYS && cliffDuration < duration && interval >= 1,\n            \"invalid vesting schedule\"\n        );\n\n        /// make sure the duration values are in harmony with inverval (both should be an exact multiple of interval)\n        require(\n            duration % interval == 0 && cliffDuration % interval == 0,\n            \"invalid cliff/duration for interval\"\n        );\n\n        /// create and populate a vesting schedule.\n        _vestingSchedules[vestingLocation] = vestingSchedule(\n            true, /// idValid\n            isRevocable,\n            cliffDuration,\n            duration,\n            interval\n        );\n\n        /// emit the event and return success\n        emit VestingScheduleCreated(\n            vestingLocation,\n            cliffDuration,\n            duration,\n            interval,\n            isRevocable\n        );\n\n        return true;\n    }\n\n    function _hasVestingSchedule(address account) internal view returns (bool ok) {\n        return _vestingSchedules[account].isValid;\n    }\n\n    /**\n    @dev returns all the information about the vesting schedule directly associated with the given\n    account. This can be used to double check that a uniform grantor has been set up with a correct\n    vesting schedule. Also, recipients of standard (non-uniform) grants can use this.\n    This method is only callable by the account holder or a grantor, so this is mainly intended\n    for administrative use.\n\n    Holders of uniform grants must use vestingAsOf() to view their vesting schedule, as it is\n    stored in the grantor account\n\n    @param grantHolder = The address to do this for.\n      the special value 0 to indicate today\n    @return  = Atuple with the following values:\n      vestDuration = grant duration in days\n      cliffDuration = duration of the cliff\n      vestIntervalDays = number of days between vesting periods\n   */\n    function getIntrinsicVestingSchedule(address grantHolder)\n        public\n        view\n        onlyGrantorOrSelf(grantHolder)\n        returns (uint32 vestDuration, uint32 cliffDuration, uint32 vestIntervalDays)\n    {\n        return (\n            _vestingSchedules[grantHolder].duration,\n            _vestingSchedules[grantHolder].cliffDuration,\n            _vestingSchedules[grantHolder].interval\n        );\n    }\n\n    ///==============================================================================================\n    /// Token grants (general purpose)\n    /// Methods to be used for administratively creating one-off token grants with vesting schedules\n    ///==============================================================================================\n\n    function _grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        address vestingLocation,\n        address grantor\n    ) internal returns (bool ok) {\n        /// make sure no prior grant is in efect\n        require(!_tokenGrants[beneficiary].isActive, \"grant already exists\");\n\n        /// check for valid vestingAmount\n        require(\n            vestingAmount <= totalAmount &&\n                vestingAmount > 0 &&\n                startDay >= JAN_1_2000_DAYS &&\n                startDay < JAN_1_3000_DAYS,\n            \"invalid vesting params\"\n        );\n\n        /// make sure the vesting schedule we are about to use is valid\n        require(_hasVestingSchedule(vestingLocation), \"no such vesting schedule\");\n\n        /// transfer the total number of tokens from grantor into the account\"s holdings\n        _transfer(grantor, beneficiary, totalAmount);\n\n        /// Emits a transfer event\n\n        /// create and populate a token grant, referencing vesting schedule\n        _tokenGrants[beneficiary] = tokenGrant(\n            true, /// isActive\n            false, /// wasRevoked\n            startDay,\n            vestingAmount,\n            vestingLocation, /// the wallet address where the vesting schedule is kept\n            grantor /// the account that performed the grant (where revoked funds should be sent)\n        );\n\n        /// Emit the event and return success\n        emit VestingTokensGranted(beneficiary, vestingAmount, startDay, vestingLocation, grantor);\n        return true;\n    }\n\n    /**\n     * @dev Immediately grants tokens to an address, including a portion that will vest over time\n     * according to a set vesting schedule. The overall duration and cliff duration of the grant must\n     * be an even multiple of the vesting interval.\n     *\n     * @param beneficiary = Address to which tokens will be granted.\n     * @param totalAmount = Total number of tokens to deposit into the account.\n     * @param vestingAmount = Out of totalAmount, the number of tokens subject to vesting.\n     * @param startDay = Start day of the grant's vesting schedule, in days since the UNIX epoch\n     *   (start of day). The startDay may be given as a date in the future or in the past, going as far\n     *   back as year 2000.\n     * @param duration = Duration of the vesting schedule, with respect to the grant start day, in days.\n     * @param cliffDuration = Duration of the cliff, with respect to the grant start day, in days.\n     * @param interval = Number of days between vesting increases.\n     * @param isRevocable = True if the grant can be revoked (i.e. was a gift) or false if it cannot\n     *   be revoked (i.e. tokens were purchased).\n     */\n    function grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevocable\n    ) public onlyGrantor returns (bool ok) {\n        // make sure no prior vesting schedule has been set\n        require(!_tokenGrants[beneficiary].isActive, \"grant already exists\");\n\n        // the vesting schedule id unique to this wallet and so will be stored here\n        _setVestingSchedule(beneficiary, cliffDuration, duration, interval, isRevocable);\n\n        // issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule\n        _grantVestingTokens(\n            beneficiary,\n            totalAmount,\n            vestingAmount,\n            startDay,\n            beneficiary,\n            msg.sender\n        );\n\n        return true;\n    }\n\n    /**\n     *  @dev this variant only grants tokens if the beneficiary account has previously self-registered\n     */\n    function safeGrantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevocable\n    ) public onlyGrantor onlyExistingAccount(beneficiary) returns (bool ok) {\n        return\n            grantVestingTokens(\n                beneficiary,\n                totalAmount,\n                vestingAmount,\n                startDay,\n                duration,\n                cliffDuration,\n                interval,\n                isRevocable\n            );\n    }\n\n    /// Check vesting\n\n    /**\n     *  @dev returns the day number of the current day, in days since the UNIX epoch\n     */\n    function today() public view returns (uint32 dayNumber) {\n        return uint32(block.timestamp / SECONDS_PER_DAY);\n    }\n\n    function _effectiveDay(uint32 onDayOrToday) internal view returns (uint32 dayNumber) {\n        return onDayOrToday == 0 ? today() : onDayOrToday;\n    }\n\n    /**\n        @dev Determines the number of tokens that have not vested in the given account\n\n        The math is: not vested amount = vesting amount * (end date - on date) / (end date - start date)\n\n        @param grantHolder = The account to check\n        @param onDayOrToday = the day to check for, in days since UNIX epoch.\n                              Can pass the special value 0 to indicate today\n    */\n    function _getNotVestedAmount(address grantHolder, uint32 onDayOrToday)\n        internal\n        view\n        returns (uint256 amountNotVested)\n    {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint32 onDay = _effectiveDay(onDayOrToday);\n\n        /// if there's not schedule, or before the vesting cliff, then the full amount is not vested\n        if (!grant.isActive || onDay < grant.startDay + vesting.cliffDuration) {\n            // none are vested (all are not vested)\n            return grant.amount;\n        } else if (onDay >= grant.startDay + vesting.duration) {\n            // if after end of vesting, then the not vested ammuntis zero (all are vested).\n            // all are vested (none are not vested)\n            return uint256(0);\n        } else {\n            // otherwise a fractional amount is vested\n            // compute the exact number of vested\n            uint32 daysVested = onDay - grant.startDay;\n            // adjust result rounding down to take into consideration the interval\n            uint32 effectiveDaysVested = (daysVested / vesting.interval) * vesting.interval;\n\n            // compute the fraction vested from schedule using 224.32 fixed pint math for date range ratio.\n            // Note: This is safe in 256-bit math because max value of X billion tokens = X*10^27 wei, and\n            // typical token amounts can fit into 90 bits. Scalling using a 32 bits value results in only 125\n            // amounts many ordrs of magnitude greter than mere billions.\n            uint256 vested = grant.amount.mul(effectiveDaysVested).div(vesting.duration);\n            return grant.amount.sub(vested);\n        }\n    }\n\n    /**\n        @dev computes the amount of funds in the given account which are available for use as of given day.\n        If there's no vesting schedule then 0 tokens are considered to be vested nad this just returns the full account balance\n\n        available amount = total funds - not vested amount\n\n        @param grantHolder the account to check\n        @param onDay the day to check for, in days since the UNIX epoch\n    */\n    function _getAvailableAmount(address grantHolder, uint32 onDay)\n        internal\n        view\n        returns (uint256 amountAvailable)\n    {\n        uint256 totalTokens = balanceOf(grantHolder);\n        uint256 vested = totalTokens.sub(_getNotVestedAmount(grantHolder, onDay));\n        return vested;\n    }\n\n    function vestingForAccountAsOf(address grantHolder, uint32 onDayOrToday)\n        public\n        view\n        onlyGrantorOrSelf(grantHolder)\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 vestDuration,\n            uint32 cliffDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        )\n    {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint256 notVestedAmount = _getNotVestedAmount(grantHolder, onDayOrToday);\n        uint256 grantAmount = grant.amount;\n\n        return (\n            grantAmount.sub(notVestedAmount),\n            notVestedAmount,\n            grantAmount,\n            grant.startDay,\n            vesting.duration,\n            vesting.cliffDuration,\n            vesting.interval,\n            grant.isActive,\n            grant.wasRevoked\n        );\n    }\n\n    /**\n        @dev return all the information about the grant's vesting as of the given day\n        for the current account to be called by the account holder\n\n        @param onDayOrToday - the day to check for. Can pass the special value 0 to indicate today\n        @return - A touple with the following values\n            amountVested - the amount of the vestingAmount that is vested\n            amountNotVested - the amount that is vested (equal to vestingAmount - vestedAmount)\n            amountOfGrant - the amount of tokens subject to vesting\n            vestStartDay - starting day of the grant\n            cliffDuration - duration of the cliff\n            vestDuration - grant duration in days\n            vestIntervalDays - number of days between vesting periods\n            isActive - true if the vesting schedule is currently active\n            wasRevoked - true id the vesting schedule was revoked\n     */\n    function vestingAsOf(uint32 onDayOrToday)\n        public\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 vestDuration,\n            uint32 cliffDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        )\n    {\n        return vestingForAccountAsOf(msg.sender, onDayOrToday);\n    }\n\n    /**\n        @dev returns true if the account has sufficient funds available to cover the given amount, \n        including consideration for vesting tokens\n\n        @param account - the account to check\n        @param amount - the required amount of vested funds\n        @param onDay - the day to check for, in days since the UNIX epoch\n     */\n    function _fundsAreAvailableOn(address account, uint256 amount, uint32 onDay)\n        internal\n        view\n        returns (bool ok)\n    {\n        return (amount <= _getAvailableAmount(account, onDay));\n    }\n\n    /**\n        @dev modifier to make a function callable only when the account is sufficiently vested right now\n\n        @param account - account to check\n        @param amount - the required amount of vested funds\n     */\n    modifier onlyIfFundsAvailableNow(address account, uint256 amount) {\n        // distingush insufficient overall balance from insufficient vested funds balance in failure msg\n        require(\n            _fundsAreAvailableOn(account, amount, today()),\n            balanceOf(account) < amount ? \"insufficient funds\" : \"insufucient vested funds\"\n        );\n        _;\n    }\n\n    //=====================================================================================================\n    // === Grant revocation\n    //=====================================================================================================\n\n    /**\n        @dev if an account has a revocable grant, this forces the grant to end based on computing\n        the amount vested up to the given date. All tokens that would no longer vest are returned\n        to the account of the original grantor\n\n        @param grantHolder - address to which tokens will be granted\n        @param onDay - the day upon which the vesting schedule will be effectively terminated\n     */\n    function revokeGrant(address grantHolder, uint32 onDay) public onlyGrantor returns (bool ok) {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint256 notVestedAmount;\n\n        // make sure grantor can only revoke from own pool\n        require(msg.sender == owner() || msg.sender == grant.grantor, \"not allowed\");\n\n        // make sure a vesting schedule has previously been set\n        require(grant.isActive, \"no active vesting schedule\");\n\n        // make sure is revocable\n        require(vesting.isRevocable, \"irrevocable\");\n\n        // fail on likely erroneous input\n        require(onDay <= grant.startDay + vesting.duration, \"no effect\");\n\n        // don't let grantor revoke any portion of the vested amount\n        require(onDay >= today(), \"cannot revoke vested holdings\");\n\n        notVestedAmount = _getNotVestedAmount(grantHolder, onDay);\n\n        // use ERC20 _approve()  to forcibly approve grantor to take back non-vested tokens from grantHolder\n        _approve(grantHolder, grant.grantor, notVestedAmount);\n\n        // Emits and approval event\n        transferFrom(grantHolder, grant.grantor, notVestedAmount);\n\n        // emits a tansfer and approval event\n        // kill the grant by updating wasRevoked and isActive\n        _tokenGrants[grantHolder].wasRevoked = true;\n        _tokenGrants[grantHolder].isActive = false;\n\n        emit GrantRevoked(grantHolder, onDay);\n        // emits GrantRevoked event\n\n        return true;\n    }\n\n    //======================================================================================================\n    //===   Overridden ERC20 functionality\n    //======================================================================================================\n\n    /**\n        @dev methods transfer() and approve() require an additional available funds check\n        to prevent spending held but not-vested tokens. Note that transferFrom() does not have this\n        additional check because approved funds come from an already set-aside allowance, not from the wallet.\n     */\n    function transfer(address to, uint256 value)\n        public\n        onlyIfFundsAvailableNow(msg.sender, value)\n        returns (bool ok)\n    {\n        return super.transfer(to, value);\n    }\n\n    /**\n        @dev additional available funds check to prevent spending but not-vested tokens\n     */\n    function approve(address spender, uint256 value)\n        public\n        onlyIfFundsAvailableNow(msg.sender, value)\n        returns (bool ok)\n    {\n        return super.approve(spender, value);\n    }\n\n}\n",
+  "source": "pragma solidity ^0.5.7;\n\nimport \"../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol\";\nimport \"./VerifiedAccount.sol\";\nimport \"./GrantorRole.sol\";\nimport \"./IERC20Vestable.sol\";\n\n/**\n    @title Contract for grantable ERC20 token vesting schedules\n    @notice Adds to an ERC20 support for grantor wallets, ehich are able to grant\n    vesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\n\n    @dev Contract which gives subclass contracts the ability to act as a pool of funds for\n    allocating tokens to any number of other addresses. Token grants support the ability\n    to vest over time in accordance a predefined vesting schedule. A given wallet can receive\n    no more than one token grant.\n\n    Tokens are transferred from the pool to the recipient at the time of grant, but the recipient\n    will only be able to transfer tokens out of their wallet after they have vested. Transfers of \n    non vested tokens are prevented.\n    \n    Two types of token grants are supported:\n    - Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange\n    for value, such as with tokens that have been purchased in an IEO\n    - Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder,\n    such as with employee grants that are given as compensation\n */\n\ncontract ERC20Vestable is ERC20, VerifiedAccount, GrantorRole, IERC20Vestable {\n    using SafeMath for uint256;\n\n    /// date-related constants for sanity checking dates to reject obvious erroneus input\n    /// and conversions from seconds to days and years that are more ore less leap year-aware\n    uint32 private constant THOUSAND_YEARS_DAYS = 365243;\n    uint32 private constant TEN_YEARS_DAYS = THOUSAND_YEARS_DAYS / 100;\n    uint32 private constant SECONDS_PER_DAY = 24 * 60 * 60;\n    uint32 private constant JAN_1_2000_SECONDS = 946684800;\n    uint32 private constant JAN_1_2000_DAYS = JAN_1_2000_SECONDS / SECONDS_PER_DAY;\n    uint32 private constant JAN_1_3000_DAYS = JAN_1_2000_DAYS + THOUSAND_YEARS_DAYS;\n\n    struct vestingSchedule {\n        bool isValid; /// true if an entry exists and is valid\n        bool isRevocable; /// true if the vesting option is revocable (a gift), false if irrevocable (paid)\n        uint32 cliffDuration; /// duration of the cliff, with respect to the start day, in days\n        uint32 duration; /// duration of the vesting schedule, with respect to the grant start day, in days\n        uint32 interval; /// duration in days of the vesting interval\n    }\n\n    struct tokenGrant {\n        bool isActive; /// true if this vesting entry is active adn in-effect entry\n        bool wasRevoked; /// true if this vesting schedule was revoked\n        uint32 startDay; /// start day of the grant, in days since the UNIX epoch\n        uint256 amount; /// total number of tokens that vest\n        address vestingLocation; /// address of the wallet that is holding the vesting schedule\n        address grantor; /// grantor that made the grant\n    }\n\n    mapping(address => vestingSchedule) private _vestingSchedules;\n    mapping(address => tokenGrant) private _tokenGrants;\n\n    ///=========================================================================\n    /// Methods for administratively creating a vesting schedule for an account\n    ///=========================================================================\n    function _setVestingSchedule(\n        address vestingLocation,\n        uint32 cliffDuration,\n        uint32 duration,\n        uint32 interval,\n        bool isRevocable\n    ) internal returns (bool ok) {\n        /// check for a valid vesting schedule given (disallow absurd values to reject likely bad input)\n        require(\n            duration > 0 && duration <= TEN_YEARS_DAYS && cliffDuration < duration && interval >= 1,\n            \"invalid vesting schedule\"\n        );\n\n        /// make sure the duration values are in harmony with inverval (both should be an exact multiple of interval)\n        require(\n            duration % interval == 0 && cliffDuration % interval == 0,\n            \"invalid cliff/duration for interval\"\n        );\n\n        /// create and populate a vesting schedule.\n        _vestingSchedules[vestingLocation] = vestingSchedule(\n            true, /// idValid\n            isRevocable,\n            cliffDuration,\n            duration,\n            interval\n        );\n\n        /// emit the event and return success\n        emit VestingScheduleCreated(\n            vestingLocation,\n            cliffDuration,\n            duration,\n            interval,\n            isRevocable\n        );\n\n        return true;\n    }\n\n    function _hasVestingSchedule(address account) internal view returns (bool ok) {\n        return _vestingSchedules[account].isValid;\n    }\n\n    /**\n    @dev returns all the information about the vesting schedule directly associated with the given\n    account. This can be used to double check that a uniform grantor has been set up with a correct\n    vesting schedule. Also, recipients of standard (non-uniform) grants can use this.\n    This method is only callable by the account holder or a grantor, so this is mainly intended\n    for administrative use.\n\n    Holders of uniform grants must use vestingAsOf() to view their vesting schedule, as it is\n    stored in the grantor account\n\n    @param grantHolder = The address to do this for.\n      the special value 0 to indicate today\n    @return  = Atuple with the following values:\n      vestDuration = grant duration in days\n      cliffDuration = duration of the cliff\n      vestIntervalDays = number of days between vesting periods\n   */\n    function getIntrinsicVestingSchedule(address grantHolder)\n        public\n        view\n        onlyGrantorOrSelf(grantHolder)\n        returns (uint32 vestDuration, uint32 cliffDuration, uint32 vestIntervalDays)\n    {\n        return (\n            _vestingSchedules[grantHolder].duration,\n            _vestingSchedules[grantHolder].cliffDuration,\n            _vestingSchedules[grantHolder].interval\n        );\n    }\n\n    ///==============================================================================================\n    /// Token grants (general purpose)\n    /// Methods to be used for administratively creating one-off token grants with vesting schedules\n    ///==============================================================================================\n\n    function _grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        address vestingLocation,\n        address grantor\n    ) internal returns (bool ok) {\n        /// make sure no prior grant is in efect\n        require(!_tokenGrants[beneficiary].isActive, \"grant already exists\");\n\n        /// check for valid vestingAmount\n        require(\n            vestingAmount <= totalAmount &&\n                vestingAmount > 0 &&\n                startDay >= JAN_1_2000_DAYS &&\n                startDay < JAN_1_3000_DAYS,\n            \"invalid vesting params\"\n        );\n\n        /// make sure the vesting schedule we are about to use is valid\n        require(_hasVestingSchedule(vestingLocation), \"no such vesting schedule\");\n\n        /// transfer the total number of tokens from grantor into the account\"s holdings\n        _transfer(grantor, beneficiary, totalAmount);\n\n        /// Emits a transfer event\n\n        /// create and populate a token grant, referencing vesting schedule\n        _tokenGrants[beneficiary] = tokenGrant(\n            true, /// isActive\n            false, /// wasRevoked\n            startDay,\n            vestingAmount,\n            vestingLocation, /// the wallet address where the vesting schedule is kept\n            grantor /// the account that performed the grant (where revoked funds should be sent)\n        );\n\n        /// Emit the event and return success\n        emit VestingTokensGranted(beneficiary, vestingAmount, startDay, vestingLocation, grantor);\n        return true;\n    }\n\n    /**\n     * @dev Immediately grants tokens to an address, including a portion that will vest over time\n     * according to a set vesting schedule. The overall duration and cliff duration of the grant must\n     * be an even multiple of the vesting interval.\n     *\n     * @param beneficiary = Address to which tokens will be granted.\n     * @param totalAmount = Total number of tokens to deposit into the account.\n     * @param vestingAmount = Out of totalAmount, the number of tokens subject to vesting.\n     * @param startDay = Start day of the grant's vesting schedule, in days since the UNIX epoch\n     *   (start of day). The startDay may be given as a date in the future or in the past, going as far\n     *   back as year 2000.\n     * @param duration = Duration of the vesting schedule, with respect to the grant start day, in days.\n     * @param cliffDuration = Duration of the cliff, with respect to the grant start day, in days.\n     * @param interval = Number of days between vesting increases.\n     * @param isRevocable = True if the grant can be revoked (i.e. was a gift) or false if it cannot\n     *   be revoked (i.e. tokens were purchased).\n     */\n    function grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevocable\n    ) public onlyGrantor returns (bool ok) {\n        // make sure no prior vesting schedule has been set\n        require(!_tokenGrants[beneficiary].isActive, \"grant already exists\");\n\n        // the vesting schedule id unique to this wallet and so will be stored here\n        _setVestingSchedule(beneficiary, cliffDuration, duration, interval, isRevocable);\n\n        // issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule\n        _grantVestingTokens(\n            beneficiary,\n            totalAmount,\n            vestingAmount,\n            startDay,\n            beneficiary,\n            msg.sender\n        );\n\n        return true;\n    }\n\n    /**\n     *  @dev this variant only grants tokens if the beneficiary account has previously self-registered\n     */\n    function safeGrantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevocable\n    ) public onlyGrantor onlyExistingAccount(beneficiary) returns (bool ok) {\n        return\n            grantVestingTokens(\n                beneficiary,\n                totalAmount,\n                vestingAmount,\n                startDay,\n                duration,\n                cliffDuration,\n                interval,\n                isRevocable\n            );\n    }\n\n    /// Check vesting\n\n    /**\n     *  @dev returns the day number of the current day, in days since the UNIX epoch\n     */\n    function today() public view returns (uint32 dayNumber) {\n        return uint32(block.timestamp / SECONDS_PER_DAY);\n    }\n\n    function _effectiveDay(uint32 onDayOrToday) internal view returns (uint32 dayNumber) {\n        return onDayOrToday == 0 ? today() : onDayOrToday;\n    }\n\n    /**\n        @dev Determines the number of tokens that have not vested in the given account\n\n        The math is: not vested amount = vesting amount * (end date - on date) / (end date - start date)\n\n        @param grantHolder = The account to check\n        @param onDayOrToday = the day to check for, in days since UNIX epoch.\n                              Can pass the special value 0 to indicate today\n    */\n    function _getNotVestedAmount(address grantHolder, uint32 onDayOrToday)\n        internal\n        view\n        returns (uint256 amountNotVested)\n    {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint32 onDay = _effectiveDay(onDayOrToday);\n\n        /// if there's not schedule, or before the vesting cliff, then the full amount is not vested\n        if (!grant.isActive || onDay < grant.startDay + vesting.cliffDuration) {\n            // none are vested (all are not vested)\n            return grant.amount;\n        } else if (onDay >= grant.startDay + vesting.duration) {\n            // if after end of vesting, then the not vested ammuntis zero (all are vested).\n            // all are vested (none are not vested)\n            return uint256(0);\n        } else {\n            // otherwise a fractional amount is vested\n            // compute the exact number of vested\n            uint32 daysVested = onDay - grant.startDay;\n            // adjust result rounding down to take into consideration the interval\n            uint32 effectiveDaysVested = (daysVested / vesting.interval) * vesting.interval;\n\n            // compute the fraction vested from schedule using 224.32 fixed pint math for date range ratio.\n            // Note: This is safe in 256-bit math because max value of X billion tokens = X*10^27 wei, and\n            // typical token amounts can fit into 90 bits. Scalling using a 32 bits value results in only 125\n            // amounts many ordrs of magnitude greter than mere billions.\n            uint256 vested = grant.amount.mul(effectiveDaysVested).div(vesting.duration);\n            return grant.amount.sub(vested);\n        }\n    }\n\n    /**\n        @dev computes the amount of funds in the given account which are available for use as of given day.\n        If there's no vesting schedule then 0 tokens are considered to be vested nad this just returns the full account balance\n\n        available amount = total funds - not vested amount\n\n        @param grantHolder the account to check\n        @param onDay the day to check for, in days since the UNIX epoch\n    */\n    function _getAvailableAmount(address grantHolder, uint32 onDay)\n        internal\n        view\n        returns (uint256 amountAvailable)\n    {\n        uint256 totalTokens = balanceOf(grantHolder);\n        uint256 vested = totalTokens.sub(_getNotVestedAmount(grantHolder, onDay));\n        return vested;\n    }\n\n    function vestingForAccountAsOf(address grantHolder, uint32 onDayOrToday)\n        public\n        view\n        onlyGrantorOrSelf(grantHolder)\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 vestDuration,\n            uint32 cliffDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        )\n    {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint256 notVestedAmount = _getNotVestedAmount(grantHolder, onDayOrToday);\n        uint256 grantAmount = grant.amount;\n\n        return (\n            grantAmount.sub(notVestedAmount),\n            notVestedAmount,\n            grantAmount,\n            grant.startDay,\n            vesting.duration,\n            vesting.cliffDuration,\n            vesting.interval,\n            grant.isActive,\n            grant.wasRevoked\n        );\n    }\n\n    /**\n        @dev return all the information about the grant's vesting as of the given day\n        for the current account to be called by the account holder\n\n        @param onDayOrToday - the day to check for. Can pass the special value 0 to indicate today\n        @return - A touple with the following values\n            amountVested - the amount of the vestingAmount that is vested\n            amountNotVested - the amount that is vested (equal to vestingAmount - vestedAmount)\n            amountOfGrant - the amount of tokens subject to vesting\n            vestStartDay - starting day of the grant\n            cliffDuration - duration of the cliff\n            vestDuration - grant duration in days\n            vestIntervalDays - number of days between vesting periods\n            isActive - true if the vesting schedule is currently active\n            wasRevoked - true id the vesting schedule was revoked\n     */\n    function vestingAsOf(uint32 onDayOrToday)\n        public\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 vestDuration,\n            uint32 cliffDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        )\n    {\n        return vestingForAccountAsOf(msg.sender, onDayOrToday);\n    }\n\n    /**\n        @dev returns true if the account has sufficient funds available to cover the given amount, \n        including consideration for vesting tokens\n\n        @param account - the account to check\n        @param amount - the required amount of vested funds\n        @param onDay - the day to check for, in days since the UNIX epoch\n     */\n    function _fundsAreAvailableOn(address account, uint256 amount, uint32 onDay)\n        internal\n        view\n        returns (bool ok)\n    {\n        return (amount <= _getAvailableAmount(account, onDay));\n    }\n\n    /**\n        @dev modifier to make a function callable only when the account is sufficiently vested right now\n\n        @param account - account to check\n        @param amount - the required amount of vested funds\n     */\n    modifier onlyIfFundsAvailableNow(address account, uint256 amount) {\n        // distingush insufficient overall balance from insufficient vested funds balance in failure msg\n        require(\n            _fundsAreAvailableOn(account, amount, today()),\n            balanceOf(account) < amount ? \"insufficient funds\" : \"insufucient vested funds\"\n        );\n        _;\n    }\n\n    //=====================================================================================================\n    // === Grant revocation\n    //=====================================================================================================\n\n    /**\n        @dev if an account has a revocable grant, this forces the grant to end based on computing\n        the amount vested up to the given date. All tokens that would no longer vest are returned\n        to the account of the original grantor\n\n        @param grantHolder - address to which tokens will be granted\n        @param onDay - the day upon which the vesting schedule will be effectively terminated\n     */\n    function revokeGrant(address grantHolder, uint32 onDay) public onlyGrantor returns (bool ok) {\n        tokenGrant storage grant = _tokenGrants[grantHolder];\n        vestingSchedule storage vesting = _vestingSchedules[grant.vestingLocation];\n        uint256 notVestedAmount;\n\n        // make sure grantor can only revoke from own pool\n        require(msg.sender == owner() || msg.sender == grant.grantor, \"not allowed\");\n\n        // make sure a vesting schedule has previously been set\n        require(grant.isActive, \"no active vesting schedule\");\n\n        // make sure is revocable\n        require(vesting.isRevocable, \"irrevocable\");\n\n        // fail on likely erroneous input\n        require(onDay <= grant.startDay + vesting.duration, \"no effect\");\n\n        // don't let grantor revoke any portion of the vested amount\n        require(onDay >= today(), \"cannot revoke vested holdings\");\n\n        notVestedAmount = _getNotVestedAmount(grantHolder, onDay);\n\n        // use ERC20 _approve()  to forcibly approve grantor to take back non-vested tokens from grantHolder\n        _approve(grantHolder, grant.grantor, notVestedAmount);\n\n        // Emits and approval event\n        transferFrom(grantHolder, grant.grantor, notVestedAmount);\n\n        // emits a tansfer and approval event\n        // kill the grant by updating wasRevoked and isActive\n        _tokenGrants[grantHolder].wasRevoked = true;\n        _tokenGrants[grantHolder].isActive = false;\n\n        emit GrantRevoked(grantHolder, onDay);\n        // emits GrantRevoked event\n\n        return true;\n    }\n\n    //======================================================================================================\n    //===   Overridden ERC20 functionality\n    //======================================================================================================\n\n    /**\n        @dev methods transfer() and approve() require an additional available funds check\n        to prevent spending held but not-vested tokens. Note that transferFrom() does not have this\n        additional check because approved funds come from an already set-aside allowance, not from the wallet.\n     */\n    function transfer(address to, uint256 value)\n        public\n        onlyIfFundsAvailableNow(msg.sender, value)\n        returns (bool ok)\n    {\n        return super.transfer(to, value);\n    }\n\n    /**\n        @dev additional available funds check to prevent spending but not-vested tokens\n     */\n    function approve(address spender, uint256 value)\n        public\n        onlyIfFundsAvailableNow(msg.sender, value)\n        returns (bool ok)\n    {\n        return super.approve(spender, value);\n    }\n\n}\n",
   "sourcePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol",
   "ast": {
     "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/ERC20Vestable.sol",
@@ -896,7 +896,7 @@
           "solidity",
           "^",
           "0.5",
-          ".0"
+          ".7"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
@@ -907,7 +907,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 824,
-        "sourceUnit": 2484,
+        "sourceUnit": 3116,
         "src": "25:87:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -918,7 +918,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 824,
-        "sourceUnit": 1471,
+        "sourceUnit": 2014,
         "src": "113:31:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -954,10 +954,10 @@
               "id": 6,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2381,
+              "referencedDeclaration": 2924,
               "src": "1408:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$2381",
+                "typeIdentifier": "t_contract$_ERC20_$2924",
                 "typeString": "contract ERC20"
               }
             },
@@ -972,10 +972,10 @@
               "id": 8,
               "name": "VerifiedAccount",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1470,
+              "referencedDeclaration": 2013,
               "src": "1415:15:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VerifiedAccount_$1470",
+                "typeIdentifier": "t_contract$_VerifiedAccount_$2013",
                 "typeString": "contract VerifiedAccount"
               }
             },
@@ -1023,10 +1023,10 @@
         "contractDependencies": [
           1050,
           1178,
-          1470,
-          1984,
-          2381,
-          2552
+          2013,
+          2527,
+          2924,
+          3184
         ],
         "contractKind": "contract",
         "documentation": "@title Contract for grantable ERC20 token vesting schedules\n@notice Adds to an ERC20 support for grantor wallets, ehich are able to grant\nvesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\n@dev Contract which gives subclass contracts the ability to act as a pool of funds for\nallocating tokens to any number of other addresses. Token grants support the ability\nto vest over time in accordance a predefined vesting schedule. A given wallet can receive\nno more than one token grant.\nTokens are transferred from the pool to the recipient at the time of grant, but the recipient\nwill only be able to transfer tokens out of their wallet after they have vested. Transfers of \nnon vested tokens are prevented.\nTwo types of token grants are supported:\n- Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange\nfor value, such as with tokens that have been purchased in an IEO\n- Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder,\nsuch as with employee grants that are given as compensation",
@@ -1036,10 +1036,10 @@
           823,
           1178,
           1050,
-          1470,
-          1984,
-          2381,
-          2552
+          2013,
+          2527,
+          2924,
+          3184
         ],
         "name": "ERC20Vestable",
         "nodeType": "ContractDefinition",
@@ -1051,10 +1051,10 @@
               "id": 14,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1873,
+              "referencedDeclaration": 2416,
               "src": "1472:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1873",
+                "typeIdentifier": "t_contract$_SafeMath_$2416",
                 "typeString": "library SafeMath"
               }
             },
@@ -2184,10 +2184,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "3749:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2433,10 +2433,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "4036:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3606,10 +3606,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "6729:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3914,10 +3914,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "6850:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4029,10 +4029,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "7160:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4120,7 +4120,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2224,
+                      "referencedDeclaration": 2767,
                       "src": "7333:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -4825,10 +4825,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "9555:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5052,7 +5052,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2567,
+                          "referencedDeclaration": 3199,
                           "src": "10059:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -5667,7 +5667,7 @@
                   "name": "onlyExistingAccount",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1389,
+                  "referencedDeclaration": 1932,
                   "src": "10510:19:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -5964,7 +5964,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2557,
+                            "referencedDeclaration": 3189,
                             "src": "11066:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -7244,7 +7244,7 @@
                                   "lValueRequested": false,
                                   "memberName": "mul",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 1826,
+                                  "referencedDeclaration": 2369,
                                   "src": "13322:16:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -7272,7 +7272,7 @@
                               "lValueRequested": false,
                               "memberName": "div",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1851,
+                              "referencedDeclaration": 2394,
                               "src": "13322:41:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -7357,7 +7357,7 @@
                               "lValueRequested": false,
                               "memberName": "sub",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1792,
+                              "referencedDeclaration": 2335,
                               "src": "13402:16:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -7679,7 +7679,7 @@
                       "name": "balanceOf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2025,
+                      "referencedDeclaration": 2568,
                       "src": "14053:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -7833,7 +7833,7 @@
                       "lValueRequested": false,
                       "memberName": "sub",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1792,
+                      "referencedDeclaration": 2335,
                       "src": "14102:15:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -8377,7 +8377,7 @@
                           "lValueRequested": false,
                           "memberName": "sub",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1792,
+                          "referencedDeclaration": 2335,
                           "src": "14968:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -8985,7 +8985,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2567,
+                          "referencedDeclaration": 3199,
                           "src": "16618:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -9762,7 +9762,7 @@
                               "name": "balanceOf",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2025,
+                              "referencedDeclaration": 2568,
                               "src": "17704:9:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -9868,10 +9868,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "17623:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10219,7 +10219,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2567,
+                              "referencedDeclaration": 3199,
                               "src": "18835:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -10251,7 +10251,7 @@
                               "name": "owner",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1907,
+                              "referencedDeclaration": 2450,
                               "src": "18849:5:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -10299,7 +10299,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2567,
+                              "referencedDeclaration": 3199,
                               "src": "18860:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -10397,10 +10397,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "18827:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10492,10 +10492,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "18978:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10587,10 +10587,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19076:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10762,10 +10762,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19172:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10890,10 +10890,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19316:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -11096,7 +11096,7 @@
                       "name": "_approve",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2352,
+                      "referencedDeclaration": 2895,
                       "src": "19562:8:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -11200,7 +11200,7 @@
                       "name": "transferFrom",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2114,
+                      "referencedDeclaration": 2657,
                       "src": "19662:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -11690,7 +11690,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2604,
+                        "referencedDeclaration": 3236,
                         "src": "20789:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_ERC20Vestable_$823",
@@ -11704,7 +11704,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2587,
                       "src": "20789:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -11747,7 +11747,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2567,
+                      "referencedDeclaration": 3199,
                       "src": "20723:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -11898,7 +11898,7 @@
             "scope": 823,
             "src": "20631:190:0",
             "stateMutability": "nonpayable",
-            "superFunction": 2044,
+            "superFunction": 2587,
             "visibility": "public"
           },
           {
@@ -11955,7 +11955,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2604,
+                        "referencedDeclaration": 3236,
                         "src": "21093:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_ERC20Vestable_$823",
@@ -11969,7 +11969,7 @@
                       "lValueRequested": false,
                       "memberName": "approve",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2079,
+                      "referencedDeclaration": 2622,
                       "src": "21093:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -12012,7 +12012,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2567,
+                      "referencedDeclaration": 3199,
                       "src": "21027:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -12163,7 +12163,7 @@
             "scope": 823,
             "src": "20931:198:0",
             "stateMutability": "nonpayable",
-            "superFunction": 2079,
+            "superFunction": 2622,
             "visibility": "public"
           }
         ],
@@ -12189,7 +12189,7 @@
           "solidity",
           "^",
           "0.5",
-          ".0"
+          ".7"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
@@ -12200,7 +12200,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 824,
-        "sourceUnit": 2484,
+        "sourceUnit": 3116,
         "src": "25:87:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -12211,7 +12211,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 824,
-        "sourceUnit": 1471,
+        "sourceUnit": 2014,
         "src": "113:31:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -12247,10 +12247,10 @@
               "id": 6,
               "name": "ERC20",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2381,
+              "referencedDeclaration": 2924,
               "src": "1408:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$2381",
+                "typeIdentifier": "t_contract$_ERC20_$2924",
                 "typeString": "contract ERC20"
               }
             },
@@ -12265,10 +12265,10 @@
               "id": 8,
               "name": "VerifiedAccount",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1470,
+              "referencedDeclaration": 2013,
               "src": "1415:15:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VerifiedAccount_$1470",
+                "typeIdentifier": "t_contract$_VerifiedAccount_$2013",
                 "typeString": "contract VerifiedAccount"
               }
             },
@@ -12316,10 +12316,10 @@
         "contractDependencies": [
           1050,
           1178,
-          1470,
-          1984,
-          2381,
-          2552
+          2013,
+          2527,
+          2924,
+          3184
         ],
         "contractKind": "contract",
         "documentation": "@title Contract for grantable ERC20 token vesting schedules\n@notice Adds to an ERC20 support for grantor wallets, ehich are able to grant\nvesting tokens to beneficiary wallets, following per-wallet custom vesting schedules.\n@dev Contract which gives subclass contracts the ability to act as a pool of funds for\nallocating tokens to any number of other addresses. Token grants support the ability\nto vest over time in accordance a predefined vesting schedule. A given wallet can receive\nno more than one token grant.\nTokens are transferred from the pool to the recipient at the time of grant, but the recipient\nwill only be able to transfer tokens out of their wallet after they have vested. Transfers of \nnon vested tokens are prevented.\nTwo types of token grants are supported:\n- Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange\nfor value, such as with tokens that have been purchased in an IEO\n- Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder,\nsuch as with employee grants that are given as compensation",
@@ -12329,10 +12329,10 @@
           823,
           1178,
           1050,
-          1470,
-          1984,
-          2381,
-          2552
+          2013,
+          2527,
+          2924,
+          3184
         ],
         "name": "ERC20Vestable",
         "nodeType": "ContractDefinition",
@@ -12344,10 +12344,10 @@
               "id": 14,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1873,
+              "referencedDeclaration": 2416,
               "src": "1472:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1873",
+                "typeIdentifier": "t_contract$_SafeMath_$2416",
                 "typeString": "library SafeMath"
               }
             },
@@ -13477,10 +13477,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "3749:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -13726,10 +13726,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "4036:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -14899,10 +14899,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "6729:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -15207,10 +15207,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "6850:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -15322,10 +15322,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "7160:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -15413,7 +15413,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2224,
+                      "referencedDeclaration": 2767,
                       "src": "7333:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -16118,10 +16118,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "9555:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -16345,7 +16345,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2567,
+                          "referencedDeclaration": 3199,
                           "src": "10059:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -16960,7 +16960,7 @@
                   "name": "onlyExistingAccount",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1389,
+                  "referencedDeclaration": 1932,
                   "src": "10510:19:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -17257,7 +17257,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2557,
+                            "referencedDeclaration": 3189,
                             "src": "11066:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -18537,7 +18537,7 @@
                                   "lValueRequested": false,
                                   "memberName": "mul",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 1826,
+                                  "referencedDeclaration": 2369,
                                   "src": "13322:16:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -18565,7 +18565,7 @@
                               "lValueRequested": false,
                               "memberName": "div",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1851,
+                              "referencedDeclaration": 2394,
                               "src": "13322:41:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -18650,7 +18650,7 @@
                               "lValueRequested": false,
                               "memberName": "sub",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 1792,
+                              "referencedDeclaration": 2335,
                               "src": "13402:16:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -18972,7 +18972,7 @@
                       "name": "balanceOf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2025,
+                      "referencedDeclaration": 2568,
                       "src": "14053:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -19126,7 +19126,7 @@
                       "lValueRequested": false,
                       "memberName": "sub",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1792,
+                      "referencedDeclaration": 2335,
                       "src": "14102:15:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -19670,7 +19670,7 @@
                           "lValueRequested": false,
                           "memberName": "sub",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1792,
+                          "referencedDeclaration": 2335,
                           "src": "14968:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -20278,7 +20278,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2567,
+                          "referencedDeclaration": 3199,
                           "src": "16618:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -21055,7 +21055,7 @@
                               "name": "balanceOf",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2025,
+                              "referencedDeclaration": 2568,
                               "src": "17704:9:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
@@ -21161,10 +21161,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "17623:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -21512,7 +21512,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2567,
+                              "referencedDeclaration": 3199,
                               "src": "18835:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -21544,7 +21544,7 @@
                               "name": "owner",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1907,
+                              "referencedDeclaration": 2450,
                               "src": "18849:5:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -21592,7 +21592,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2567,
+                              "referencedDeclaration": 3199,
                               "src": "18860:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -21690,10 +21690,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "18827:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -21785,10 +21785,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "18978:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -21880,10 +21880,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19076:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -22055,10 +22055,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19172:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -22183,10 +22183,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2570,
-                        2571
+                        3202,
+                        3203
                       ],
-                      "referencedDeclaration": 2571,
+                      "referencedDeclaration": 3203,
                       "src": "19316:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -22389,7 +22389,7 @@
                       "name": "_approve",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2352,
+                      "referencedDeclaration": 2895,
                       "src": "19562:8:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -22493,7 +22493,7 @@
                       "name": "transferFrom",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2114,
+                      "referencedDeclaration": 2657,
                       "src": "19662:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -22983,7 +22983,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2604,
+                        "referencedDeclaration": 3236,
                         "src": "20789:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_ERC20Vestable_$823",
@@ -22997,7 +22997,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2587,
                       "src": "20789:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -23040,7 +23040,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2567,
+                      "referencedDeclaration": 3199,
                       "src": "20723:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -23191,7 +23191,7 @@
             "scope": 823,
             "src": "20631:190:0",
             "stateMutability": "nonpayable",
-            "superFunction": 2044,
+            "superFunction": 2587,
             "visibility": "public"
           },
           {
@@ -23248,7 +23248,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2604,
+                        "referencedDeclaration": 3236,
                         "src": "21093:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_ERC20Vestable_$823",
@@ -23262,7 +23262,7 @@
                       "lValueRequested": false,
                       "memberName": "approve",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2079,
+                      "referencedDeclaration": 2622,
                       "src": "21093:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -23305,7 +23305,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2567,
+                      "referencedDeclaration": 3199,
                       "src": "21027:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -23456,7 +23456,7 @@
             "scope": 823,
             "src": "20931:198:0",
             "stateMutability": "nonpayable",
-            "superFunction": 2079,
+            "superFunction": 2622,
             "visibility": "public"
           }
         ],
@@ -23472,7 +23472,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-08-30T11:02:18.454Z",
+  "updatedAt": "2019-08-31T11:58:38.001Z",
   "devdoc": {
     "details": "Contract which gives subclass contracts the ability to act as a pool of funds for allocating tokens to any number of other addresses. Token grants support the ability to vest over time in accordance a predefined vesting schedule. A given wallet can receive no more than one token grant. Tokens are transferred from the pool to the recipient at the time of grant, but the recipient will only be able to transfer tokens out of their wallet after they have vested. Transfers of  non vested tokens are prevented. Two types of token grants are supported: - Irrevocable grants, intended for use in cases where vesting tokens have been issued in exchange for value, such as with tokens that have been purchased in an IEO - Revocable grants, intended for use in cases when vesting tokens have been gifted to the holder, such as with employee grants that are given as compensation",
     "methods": {

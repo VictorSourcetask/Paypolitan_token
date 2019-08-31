@@ -11,14 +11,19 @@
     "lint": "prettier --list-different contracts/**/*.sol"
   },
   "dependencies": {
+    "bn": "^1.0.4",
+    "colors": "^1.3.3",
     "eth-crypto": "^1.4.0",
+    "js-sha3": "^0.8.0",
     "lodash": "^4.17.15",
     "mocha": "^6.2.0",
     "moment": "^2.24.0",
     "openzeppelin-solidity": "^2.3.0",
     "save": "^2.4.0",
+    "solc": "^0.5.11",
     "truffle": "^5.0.33",
     "truffle-assertions": "^0.9.1",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.2.1"
   },
   "devDependencies": {

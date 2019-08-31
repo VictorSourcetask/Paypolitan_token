@@ -63,5 +63,4 @@ contract PaypolitanToken is
         selfdestruct(payableOwner);
         return true;
     }
-
 }
