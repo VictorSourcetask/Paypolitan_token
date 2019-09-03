@@ -1,42 +1,43 @@
 {
-  "name": "paypolitan_token",
-  "version": "1.0.0",
-  "description": "Paypolitan Smart contracts",
-  "main": "truffle.js",
-  "license": "MIT",
-  "author": "Victor Cristinari",
-  "private": true,
-  "scripts": {
-    "prettier": "prettier --write contracts/**/*.sol",
-    "lint": "prettier --list-different contracts/**/*.sol"
-  },
-  "dependencies": {
-    "bn": "^1.0.4",
-    "colors": "^1.3.3",
-    "eth-crypto": "^1.4.0",
-    "js-sha3": "^0.8.0",
-    "lodash": "^4.17.15",
-    "mocha": "^6.2.0",
-    "moment": "^2.24.0",
-    "openzeppelin-solidity": "^2.3.0",
-    "save": "^2.4.0",
-    "solc": "^0.5.11",
-    "truffle": "^5.0.33",
-    "truffle-assertions": "^0.9.1",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "web3": "^1.2.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "bignumber": "^1.1.0",
-    "ganache-cli": "^6.6.0",
-    "prettier": "^1.18.2",
-    "prettier-plugin-solidity": "^1.0.0-alpha.31",
-    "solhint": "^2.2.0",
-    "solhint-plugin-prettier": "^0.0.3",
-    "solidity-coverage": "^0.6.4",
-    "truffle-flattener": "^1.4.0"
-  }
+    "name": "paypolitan_token",
+    "version": "1.0.0",
+    "description": "Paypolitan Smart contracts",
+    "main": "truffle.js",
+    "license": "MIT",
+    "author": "Victor Cristinari",
+    "private": true,
+    "scripts": {
+        "prettier": "prettier --write contracts/**/*.sol",
+        "lint": "prettier --list-different contracts/**/*.sol",
+        "test": "mocha"
+    },
+    "dependencies": {
+        "bn": "^1.0.4",
+        "colors": "^1.3.3",
+        "eth-crypto": "^1.4.0",
+        "js-sha3": "^0.8.0",
+        "lodash": "^4.17.15",
+        "mocha": "^6.2.0",
+        "moment": "^2.24.0",
+        "openzeppelin-solidity": "^2.3.0",
+        "save": "^2.4.0",
+        "solc": "^0.5.11",
+        "truffle": "^5.0.33",
+        "truffle-assertions": "^0.9.1",
+        "truffle-hdwallet-provider": "^1.0.17",
+        "web3": "^1.2.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "bignumber": "^1.1.0",
+        "ganache-cli": "^6.6.0",
+        "prettier": "^1.18.2",
+        "prettier-plugin-solidity": "^1.0.0-alpha.31",
+        "solhint": "^2.2.0",
+        "solhint-plugin-prettier": "^0.0.3",
+        "solidity-coverage": "^0.6.4",
+        "truffle-flattener": "^1.4.0"
+    }
 }

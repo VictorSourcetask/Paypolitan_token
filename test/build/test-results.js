@@ -101,7 +101,7 @@ function resultFunc() {
         checkIsTrue: checkIsTrue,
         checkDidFail: checkDidFail,
         checkIsFalse: checkIsFalse,
-        checkIsTransactionOk: checkIsTransactionOk,
+        checkIsTransactionOk: checkTransactionOk,
         getResults: getResults
     });
 }

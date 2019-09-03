@@ -17,7 +17,7 @@
         "indexed": true,
         "internalType": "address",
         "name": "account",
-        "type": "address"pathSeparator
+        "type": "address"
       }
     ],
     "name": "AccountRegistered",

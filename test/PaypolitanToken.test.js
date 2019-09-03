@@ -30,6 +30,9 @@ build(contractFullPath, console);
 
 const constructorArgs = [];
 
+// If the compile/deploy is failing, set this true to figure out why (but is noisy)
+const logDeployAndCompileErrors = !RUN_ALL_TESTS;
+
 // if the compile/deploy is failing, set this true to figure out why (but is noisy)
 const deployLogger = logDeployAndCompileErrors ? console : nullLogger;
 beforeEach(async () => {
@@ -48,7 +51,7 @@ beforeEach(async () => {
         account7 = deployment.accounts[7];
         account8 = deployment.accounts[8];
         account9 = deployment.accounts[9];
-
+        console.log(deployment);
         PaypolitanToken = deployment.contract;
         if (log)
             console.log(
@@ -126,8 +129,8 @@ describe("PaypolitanToken", () => {
     // ===========================================================================================
     // === Internal utilities
     // ===========================================================================================
-    const checkAreEqual = result.checkAreEqual;
-    const checkAreNotEqual = result.checkAreNotEqual;
+    const checkAreEqual = result.checkValuesAreEqual;
+    const checkAreNotEqual = result.checkValuesAreNotEqual;
 
     // rounds irrational numbers to a whole token by truncation (rownding down), which matches the behavior of
     // solidity integer math (expecially division). This accomodates rounding up of very tiny decimals short of
@@ -187,4 +190,58 @@ describe("PaypolitanToken", () => {
 
     // Wrap your async call with this if you expect it to fail. Enables you to implement a test where
     // not failing is the unexpected case. The result will be true if the incoming send method result failed.
+    async function expectFail(resultPromise, expectedMessage) {
+        // handle promise success/fail input
+        if (!expectedMessage) expectedMessage = DEFAULT_ERROR;
+
+        let outcome = false;
+        try {
+            let unexpectedSuccess = await resultPromise;
+            if (unexpectedSuccess) throw "Expected method to fail but it was successful!";
+            const errorMsg =
+                (!expectedMessage ? "" : "Expected " + expectedMessage + ": ") +
+                "No exception was thrown! (incorrect)";
+            result.fail(errorMsg);
+            outcome = false;
+        } catch (error) {
+            if (typeof error === "string") throw error;
+            const failedAsExpected = error.message.indexOf(expectedMessage) >= 0;
+            if (failedAsExpected) {
+                expectedFails++;
+            } else {
+                const errorMsg =
+                    "Expected '" +
+                    expectedMessage +
+                    "' exception but got '" +
+                    error.message +
+                    "' instead! (incorrect)";
+                result.fail(errorMsg);
+            }
+            outcome = failedAsExpected;
+        }
+        return outcome;
+    }
+
+    async function subtest(caption, fn) {
+        // Display sub-tests within tests in the build output.
+        console.log(colors.grey("    - subtest " + caption));
+        await fn();
+    }
+
+    // ================================================================================
+    // === Test basic attributes of the ProxyToken token
+    // ================================================================================
+    it("0. verify successful compilation/deploymement of PaypolitanToken", () => {
+        checkAreNotEqual(
+            PaypolitanToken,
+            null,
+            "PaypolitanToken is null. Did compile fail? Did deploy fail? Was there a problem with the constructor?"
+        );
+    });
+
+    if (runThisTest())
+        it("1. verified deployment of the PaypolitanToken contract by confirming it has a contract address", () => {
+            if (!PaypolitanToken) return;
+            checkAreNotEqual(PaypolitanToken.options.address, null);
+        });
 });

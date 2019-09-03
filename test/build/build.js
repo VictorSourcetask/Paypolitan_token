@@ -246,4 +246,4 @@ function replaceAll(value, oldSeparator, newSeparator) {
 
 module.exports = build;
 // Uncomment ro run directly or debug
-build();
+// build();
