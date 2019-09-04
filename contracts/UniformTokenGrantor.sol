@@ -1,48 +1,48 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.7;
 
 import "./ERC20Vestable.sol";
 
 /**
-    @title Contract for uniform granting of vesting tokens
-
-    @notice Adds methods for programatic creation for uniform or standard token vesting grants
-
-    @dev this is primarily for use by exchanges and scripted internal employee incentive grant creation
+ * @title Contract for uniform granting of vesting tokens
+ *
+ * @notice Adds methods for programmatic creation of uniform or standard token vesting grants.
+ *
+ * @dev This is primarily for use by exchanges and scripted internal employee incentive grant creation.
  */
 contract UniformTokenGrantor is ERC20Vestable {
     struct restrictions {
         bool isValid;
-        uint32 minStartDay; // the smallest value for startDay allowed in grant creation
-        uint32 maxStartDay; // the maximum value for startDay allowed in grant creation
-        uint32 expirationDay; // the last day this grantor may make grants
+        uint32 minStartDay; /* The smallest value for startDay allowed in grant creation. */
+        uint32 maxStartDay; /* The maximum value for startDay allowed in grant creation. */
+        uint32 expirationDay; /* The last day this grantor may make grants. */
     }
 
     mapping(address => restrictions) private _restrictions;
 
-    //========================================================================================
-    //=== Uniform token grant setup
-    //=== Methods used by owner to set up uniform grants on restricted grantor
-    //========================================================================================
+    // =========================================================================
+    // === Uniform token grant setup
+    // === Methods used by owner to set up uniform grants on restricted grantor
+    // =========================================================================
 
     event GrantorRestrictionsSet(
         address indexed grantor,
         uint32 minStartDay,
-        uint32 maxStartDay, //========================================================================================
+        uint32 maxStartDay,
         uint32 expirationDay
     );
 
     /**
-        @dev lets the ownser set or change specific restrictions. Restrictions must be established
-        before the grantor will be allowed to issue grants.
-
-        All the values are expressed as number of days since UNIX epoch. Nothe that the inputs
-        are themselevs not very thoroughly restricted. However, this method can be called more than once if
-        incorrect values need to be changed, or to extend a grantor's expiration date
-
-        @param grantor - Address which will receive the uniform grantable vesting schedule
-        @param minStartDay - the smallest value for startDay allowed in grant creation
-        @param maxStartDay - the maximum value for startDay allowed in grant creation
-        @param expirationDay - the last day this grantor may make grants
+     * @dev Lets owner set or change existing specific restrictions. Restrictions must be established
+     * before the grantor will be allowed to issue grants.
+     *
+     * All date values are expressed as number of days since the UNIX epoch. Note that the inputs are
+     * themselves not very thoroughly restricted. However, this method can be called more than once
+     * if incorrect values need to be changed, or to extend a grantor's expiration date.
+     *
+     * @param grantor = Address which will receive the uniform grantable vesting schedule.
+     * @param minStartDay = The smallest value for startDay allowed in grant creation.
+     * @param maxStartDay = The maximum value for startDay allowed in grant creation.
+     * @param expirationDay = The last day this grantor may make grants.
      */
     function setRestrictions(
         address grantor,
@@ -55,15 +55,15 @@ contract UniformTokenGrantor is ERC20Vestable {
             "invalid params"
         );
 
-        // we allow owner to set or change existing specific restrictions
+        // We allow owner to set or change existing specific restrictions.
         _restrictions[grantor] = restrictions(
-            true, //isValid
+            true, /*isValid*/
             minStartDay,
             maxStartDay,
             expirationDay
         );
 
-        // emit the event and return success
+        // Emit the event and return success.
         emit GrantorRestrictionsSet(grantor, minStartDay, maxStartDay, expirationDay);
         return true;
     }
@@ -87,25 +87,25 @@ contract UniformTokenGrantor is ERC20Vestable {
         uint32 interval,
         bool isRevocable
     ) public onlyOwner onlyExistingAccount(grantor) returns (bool ok) {
-        // only allow doing this to restricted grantor role account
+        // Only allow doing this to restricted grantor role account.
         require(isUniformGrantor(grantor), "uniform grantor only");
-
-        // make sure no prior vesting schedule has been set!
+        // Make sure no prior vesting schedule has been set!
         require(!_hasVestingSchedule(grantor), "schedule already exists");
 
-        // the vesting schedule is unique to this grantor wallet and so will be sored here to be
+        // The vesting schedule is unique to this grantor wallet and so will be stored here to be
         // referenced by future grants. Emits VestingScheduleCreated event.
         _setVestingSchedule(grantor, cliffDuration, duration, interval, isRevocable);
+
         return true;
     }
 
-    //================================================================================================
-    //=== Uniform token grants
-    //=== Methods t be used by exchanges to use for creating tokens
-    //================================================================================================
+    // =========================================================================
+    // === Uniform token grants
+    // === Methods to be used by exchanges to use for creating tokens.
+    // =========================================================================
 
     function isUniformGrantorWithSchedule(address account) internal view returns (bool ok) {
-        // check for grantor that has a uniform vesting schedule already set
+        // Check for grantor that has a uniform vesting schedule already set.
         return isUniformGrantor(account) && _hasVestingSchedule(account);
     }
 
@@ -128,15 +128,15 @@ contract UniformTokenGrantor is ERC20Vestable {
     }
 
     /**
-        @dev Immediately grants tokens to an address, including a portion that will vest over time
-        according to the uniform vesting schedule already established ni the grantor's account
-
-        @param beneficiary = Address to which tokens will be granted
-        @param totalAmount = total number of tokens to deposit into the account
-        @param vestingAmount = out of totalAmount, the number of tokens subject to vesting
-        @param startDay = start day of the grant's vesting schedule, in days since the UNIX epoch
-            (start of day). The startDay may be given as a date in the future or in the past, going as far
-            back as year 2000
+     * @dev Immediately grants tokens to an address, including a portion that will vest over time
+     * according to the uniform vesting schedule already established in the grantor's account.
+     *
+     * @param beneficiary = Address to which tokens will be granted.
+     * @param totalAmount = Total number of tokens to deposit into the account.
+     * @param vestingAmount = Out of totalAmount, the number of tokens subject to vesting.
+     * @param startDay = Start day of the grant's vesting schedule, in days since the UNIX epoch
+     *   (start of day). The startDay may be given as a date in the future or in the past, going as far
+     *   back as year 2000.
      */
     function grantUniformVestingTokens(
         address beneficiary,
@@ -147,11 +147,10 @@ contract UniformTokenGrantor is ERC20Vestable {
         public
         onlyUniformGrantorWithSchedule(msg.sender)
         whenGrantorRestrictionsMet(startDay)
-        onlyExistingAccount(beneficiary)
         returns (bool ok)
     {
-        // issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule
-        // emits VestingTokensGranted event
+        // Issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule.
+        // Emits VestingTokensGranted event.
         return
             _grantVestingTokens(
                 beneficiary,
@@ -164,7 +163,7 @@ contract UniformTokenGrantor is ERC20Vestable {
     }
 
     /**
-        @dev This variant only grants tokens if the beneficiary account has previously self-registered
+     * @dev This variant only grants tokens if the beneficiary account has previously self-registered.
      */
     function safeGrantUniformVestingTokens(
         address beneficiary,
@@ -178,8 +177,8 @@ contract UniformTokenGrantor is ERC20Vestable {
         onlyExistingAccount(beneficiary)
         returns (bool ok)
     {
-        // issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule
-        // emits VestingTokensGranted event
+        // Issue grantor tokens to the beneficiary, using beneficiary's own vesting schedule.
+        // Emits VestingTokensGranted event.
         return
             _grantVestingTokens(
                 beneficiary,

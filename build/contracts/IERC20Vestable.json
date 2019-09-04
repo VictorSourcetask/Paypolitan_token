@@ -6,27 +6,32 @@
       "inputs": [
         {
           "indexed": true,
+          "internalType": "address",
           "name": "vestingLocation",
           "type": "address"
         },
         {
           "indexed": false,
+          "internalType": "uint32",
           "name": "cliffDuration",
           "type": "uint32"
         },
         {
           "indexed": true,
+          "internalType": "uint32",
           "name": "duration",
           "type": "uint32"
         },
         {
           "indexed": false,
+          "internalType": "uint32",
           "name": "interval",
           "type": "uint32"
         },
         {
           "indexed": true,
-          "name": "isRevokable",
+          "internalType": "bool",
+          "name": "isRevocable",
           "type": "bool"
         }
       ],
@@ -38,26 +43,31 @@
       "inputs": [
         {
           "indexed": true,
+          "internalType": "address",
           "name": "beneficiary",
           "type": "address"
         },
         {
           "indexed": true,
+          "internalType": "uint256",
           "name": "vestingAmount",
           "type": "uint256"
         },
         {
           "indexed": false,
+          "internalType": "uint32",
           "name": "startDay",
           "type": "uint32"
         },
         {
           "indexed": false,
+          "internalType": "address",
           "name": "vestingLocation",
           "type": "address"
         },
         {
           "indexed": true,
+          "internalType": "address",
           "name": "grantor",
           "type": "address"
         }
@@ -70,11 +80,13 @@
       "inputs": [
         {
           "indexed": true,
+          "internalType": "address",
           "name": "grantHolder",
           "type": "address"
         },
         {
           "indexed": true,
+          "internalType": "uint32",
           "name": "onDay",
           "type": "uint32"
         }
@@ -86,21 +98,25 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "grantHolder",
           "type": "address"
         }
       ],
-      "name": "getInstrinsicVestingSchedule",
+      "name": "getIntrinsicVestingSchedule",
       "outputs": [
         {
+          "internalType": "uint32",
           "name": "cliffDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestIntervalDays",
           "type": "uint32"
         }
@@ -113,41 +129,50 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "beneficiary",
           "type": "address"
         },
         {
+          "internalType": "uint256",
           "name": "totalAmount",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "vestingAmount",
           "type": "uint256"
         },
         {
+          "internalType": "uint32",
           "name": "startDay",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "duration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "cliffDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "interval",
           "type": "uint32"
         },
         {
-          "name": "isRevacable",
+          "internalType": "bool",
+          "name": "isRevocable",
           "type": "bool"
         }
       ],
       "name": "grantVestingTokens",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "ok",
           "type": "bool"
         }
@@ -162,6 +187,7 @@
       "name": "today",
       "outputs": [
         {
+          "internalType": "uint32",
           "name": "dayNumber",
           "type": "uint32"
         }
@@ -174,10 +200,12 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "grantHolder",
           "type": "address"
         },
         {
+          "internalType": "uint32",
           "name": "onDayOrToday",
           "type": "uint32"
         }
@@ -185,38 +213,47 @@
       "name": "vestingForAccountAsOf",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "amountVested",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "amountNotVested",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "amountOfGrant",
           "type": "uint256"
         },
         {
+          "internalType": "uint32",
           "name": "vestStartDay",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "cliffDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestIntervalDays",
           "type": "uint32"
         },
         {
+          "internalType": "bool",
           "name": "isActive",
           "type": "bool"
         },
         {
+          "internalType": "bool",
           "name": "wasRevoked",
           "type": "bool"
         }
@@ -229,45 +266,55 @@
       "constant": true,
       "inputs": [
         {
-          "name": "onDayorToday",
+          "internalType": "uint32",
+          "name": "onDayOrToday",
           "type": "uint32"
         }
       ],
       "name": "vestingAsOf",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "amountVested",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "amountNotVested",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "amountOfGrant",
           "type": "uint256"
         },
         {
+          "internalType": "uint32",
           "name": "vestStartDay",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "cliffDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestDuration",
           "type": "uint32"
         },
         {
+          "internalType": "uint32",
           "name": "vestIntervalDays",
           "type": "uint32"
         },
         {
+          "internalType": "bool",
           "name": "isActive",
           "type": "bool"
         },
         {
+          "internalType": "bool",
           "name": "wasRevoked",
           "type": "bool"
         }
@@ -280,10 +327,12 @@
       "constant": false,
       "inputs": [
         {
-          "name": "grandHolder",
+          "internalType": "address",
+          "name": "grantHolder",
           "type": "address"
         },
         {
+          "internalType": "uint32",
           "name": "onDay",
           "type": "uint32"
         }
@@ -291,6 +340,7 @@
       "name": "revokeGrant",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
           "type": "bool"
         }
@@ -300,42 +350,42 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getInstrinsicVestingSchedule\",\"outputs\":[{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"grandHolder\",\"type\":\"address\"},{\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"revokeGrant\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"onDayorToday\",\"type\":\"uint32\"}],\"name\":\"vestingAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"beneficiary\",\"type\":\"address\"},{\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"name\":\"startDay\",\"type\":\"uint32\"},{\"name\":\"duration\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"interval\",\"type\":\"uint32\"},{\"name\":\"isRevacable\",\"type\":\"bool\"}],\"name\":\"grantVestingTokens\",\"outputs\":[{\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"today\",\"outputs\":[{\"name\":\"dayNumber\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"grantHolder\",\"type\":\"address\"},{\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingForAccountAsOf\",\"outputs\":[{\"name\":\"amountVested\",\"type\":\"uint256\"},{\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"name\":\"isActive\",\"type\":\"bool\"},{\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"duration\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint32\"},{\"indexed\":true,\"name\":\"isRevokable\",\"type\":\"bool\"}],\"name\":\"VestingScheduleCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"startDay\",\"type\":\"uint32\"},{\"indexed\":false,\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"grantor\",\"type\":\"address\"}],\"name\":\"VestingTokensGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"grantHolder\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"GrantRevoked\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":\"IERC20Vestable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":{\"keccak256\":\"0x8fded3f3bc3fed49475e521c98b072ca2bfa7d683b4e3cf4bbccde10aa59cdfd\",\"urls\":[\"bzzr://5d15bd6a670bc566b5813ca2a72d87710cd15d66c8820e9047a6a18250ad49eb\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"grantHolder\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"revokeGrant\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingAsOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountVested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"internalType\":\"uint32\",\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint32\",\"name\":\"startDay\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"duration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"interval\",\"type\":\"uint32\"},{\"internalType\":\"bool\",\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"grantVestingTokens\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"ok\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"grantHolder\",\"type\":\"address\"}],\"name\":\"getIntrinsicVestingSchedule\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestIntervalDays\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"today\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"dayNumber\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"grantHolder\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"onDayOrToday\",\"type\":\"uint32\"}],\"name\":\"vestingForAccountAsOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountVested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountNotVested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOfGrant\",\"type\":\"uint256\"},{\"internalType\":\"uint32\",\"name\":\"vestStartDay\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestDuration\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"vestIntervalDays\",\"type\":\"uint32\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"wasRevoked\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"cliffDuration\",\"type\":\"uint32\"},{\"indexed\":true,\"internalType\":\"uint32\",\"name\":\"duration\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"interval\",\"type\":\"uint32\"},{\"indexed\":true,\"internalType\":\"bool\",\"name\":\"isRevocable\",\"type\":\"bool\"}],\"name\":\"VestingScheduleCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"vestingAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"startDay\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vestingLocation\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"grantor\",\"type\":\"address\"}],\"name\":\"VestingTokensGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"grantHolder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint32\",\"name\":\"onDay\",\"type\":\"uint32\"}],\"name\":\"GrantRevoked\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":\"IERC20Vestable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol\":{\"keccak256\":\"0xdf6013d1ddb5c4d36d9faaddfabe90c4abc6a9f578c6cdad2ea826d2a8ae46fa\",\"urls\":[\"bzz-raw://9febabc4031fbcd4992ff46526f14470561e683695ee9b84bfe4c954d4264098\",\"dweb:/ipfs/QmZuqKRq894FnHJtX2cV73PZngKwubBmpXQQ1eBCL74enB\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol\":{\"keccak256\":\"0x67c62231507825c6e82a6cb07104a47a09a4077b168a8d7a87c4a6b87c28889c\",\"urls\":[\"bzz-raw://3096222c1a293f7b694c8e0669caa2e5cfb73a16cbdade17c25b6dfb31d037df\",\"dweb:/ipfs/QmP1T38aRxrwdoTWgumBwk9WwSAxzDJQgSX6Wh663g4jPq\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x559e1c41502e437b665893c320b2d70f1311492799916fabcb55f7b18100c0a2\",\"urls\":[\"bzz-raw://4e4eeff249b7e8c50c166cb09d17b20578cc0bed7bffa71090d0fadce2f6efc5\",\"dweb:/ipfs/QmWDt4dAfGQwjLMg4bmKq5kVMBkzqqAxnvfEUxVcsN4PsN\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x65a4078c03875c25413a068ce9cfdd7e68a90f8786612d1189c89341e6e3b802\",\"urls\":[\"bzz-raw://45c0d95495b944fbb1aa09d900b0ab530903a432125ab8fddfa05064a7988991\",\"dweb:/ipfs/Qma2VeknkKA1THeubGzshWFk44BktXkXP1UKp9Un2uDSsu\"]},\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9\",\"urls\":[\"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91\",\"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\nimport \"../node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\";\n\ninterface IERC20Vestable {\n    function getInstrinsicVestingSchedule(address grantHolder)\n        external\n        view\n        returns (uint32 cliffDuration, uint32 vestDuration, uint32 vestIntervalDays);\n\n    function grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevacable\n    ) external returns (bool ok);\n\n    function today() external view returns (uint32 dayNumber);\n\n    function vestingForAccountAsOf(address grantHolder, uint32 onDayOrToday)\n        external\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 cliffDuration,\n            uint32 vestDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        );\n\n    function vestingAsOf(uint32 onDayorToday)\n        external\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 cliffDuration,\n            uint32 vestDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        );\n\n    function revokeGrant(address grandHolder, uint32 onDay) external returns (bool);\n\n    event VestingScheduleCreated(\n        address indexed vestingLocation,\n        uint32 cliffDuration,\n        uint32 indexed duration,\n        uint32 interval,\n        bool indexed isRevokable\n    );\n\n    event VestingTokensGranted(\n        address indexed beneficiary,\n        uint256 indexed vestingAmount,\n        uint32 startDay,\n        address vestingLocation,\n        address indexed grantor\n    );\n\n    event GrantRevoked(address indexed grantHolder, uint32 indexed onDay);\n}\n",
+  "source": "pragma solidity ^0.5.7;\n\nimport \"../openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\";\n\ninterface IERC20Vestable {\n    function getIntrinsicVestingSchedule(address grantHolder)\n        external\n        view\n        returns (uint32 cliffDuration, uint32 vestDuration, uint32 vestIntervalDays);\n\n    function grantVestingTokens(\n        address beneficiary,\n        uint256 totalAmount,\n        uint256 vestingAmount,\n        uint32 startDay,\n        uint32 duration,\n        uint32 cliffDuration,\n        uint32 interval,\n        bool isRevocable\n    ) external returns (bool ok);\n\n    function today() external view returns (uint32 dayNumber);\n\n    function vestingForAccountAsOf(address grantHolder, uint32 onDayOrToday)\n        external\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 cliffDuration,\n            uint32 vestDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        );\n\n    function vestingAsOf(uint32 onDayOrToday)\n        external\n        view\n        returns (\n            uint256 amountVested,\n            uint256 amountNotVested,\n            uint256 amountOfGrant,\n            uint32 vestStartDay,\n            uint32 cliffDuration,\n            uint32 vestDuration,\n            uint32 vestIntervalDays,\n            bool isActive,\n            bool wasRevoked\n        );\n\n    function revokeGrant(address grantHolder, uint32 onDay) external returns (bool);\n\n    event VestingScheduleCreated(\n        address indexed vestingLocation,\n        uint32 cliffDuration,\n        uint32 indexed duration,\n        uint32 interval,\n        bool indexed isRevocable\n    );\n\n    event VestingTokensGranted(\n        address indexed beneficiary,\n        uint256 indexed vestingAmount,\n        uint32 startDay,\n        address vestingLocation,\n        address indexed grantor\n    );\n\n    event GrantRevoked(address indexed grantHolder, uint32 indexed onDay);\n}\n",
   "sourcePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol",
   "ast": {
     "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol",
     "exportedSymbols": {
       "IERC20Vestable": [
-        1179
+        1178
       ]
     },
-    "id": 1180,
+    "id": 1179,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1053,
+        "id": 1052,
         "literals": [
           "solidity",
           "^",
           "0.5",
-          ".0"
+          ".7"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:2"
       },
       {
-        "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
-        "file": "../node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
-        "id": 1054,
+        "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "file": "../openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "id": 1053,
         "nodeType": "ImportDirective",
-        "scope": 1180,
-        "sourceUnit": 2554,
-        "src": "24:80:2",
+        "scope": 1179,
+        "sourceUnit": 3015,
+        "src": "25:67:2",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -345,9 +395,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1179,
+        "id": 1178,
         "linearizedBaseContracts": [
-          1179
+          1178
         ],
         "name": "IERC20Vestable",
         "nodeType": "ContractDefinition",
@@ -355,23 +405,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1065,
+            "id": 1064,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "getInstrinsicVestingSchedule",
+            "name": "getIntrinsicVestingSchedule",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1057,
+              "id": 1056,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1056,
+                  "id": 1055,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "175:19:2",
+                  "scope": 1064,
+                  "src": "162:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -379,10 +429,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1055,
+                    "id": 1054,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "175:7:2",
+                    "src": "162:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -393,19 +443,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "174:21:2"
+              "src": "161:21:2"
             },
             "returnParameters": {
-              "id": 1064,
+              "id": 1063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1059,
+                  "id": 1058,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "243:20:2",
+                  "scope": 1064,
+                  "src": "230:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -413,10 +463,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1058,
+                    "id": 1057,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "243:6:2",
+                    "src": "230:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -427,11 +477,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1061,
+                  "id": 1060,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "265:19:2",
+                  "scope": 1064,
+                  "src": "252:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -439,10 +489,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1060,
+                    "id": 1059,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "265:6:2",
+                    "src": "252:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -453,11 +503,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1063,
+                  "id": 1062,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "286:23:2",
+                  "scope": 1064,
+                  "src": "273:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -465,10 +515,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1062,
+                    "id": 1061,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "286:6:2",
+                    "src": "273:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -478,10 +528,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "242:68:2"
+              "src": "229:68:2"
             },
-            "scope": 1179,
-            "src": "137:174:2",
+            "scope": 1178,
+            "src": "125:173:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -489,23 +539,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1086,
+            "id": 1085,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "grantVestingTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1082,
+              "id": 1081,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1067,
+                  "id": 1066,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "354:19:2",
+                  "scope": 1085,
+                  "src": "341:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -513,10 +563,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1066,
+                    "id": 1065,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "354:7:2",
+                    "src": "341:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -528,11 +578,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1069,
+                  "id": 1068,
                   "name": "totalAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "383:19:2",
+                  "scope": 1085,
+                  "src": "370:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -540,10 +590,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1068,
+                    "id": 1067,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "383:7:2",
+                    "src": "370:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -554,11 +604,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1071,
+                  "id": 1070,
                   "name": "vestingAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "412:21:2",
+                  "scope": 1085,
+                  "src": "399:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -566,10 +616,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1070,
+                    "id": 1069,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "412:7:2",
+                    "src": "399:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -580,11 +630,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1073,
+                  "id": 1072,
                   "name": "startDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "443:15:2",
+                  "scope": 1085,
+                  "src": "430:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -592,10 +642,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1072,
+                    "id": 1071,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "443:6:2",
+                    "src": "430:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -606,11 +656,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1075,
+                  "id": 1074,
                   "name": "duration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "468:15:2",
+                  "scope": 1085,
+                  "src": "455:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -618,10 +668,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1074,
+                    "id": 1073,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "468:6:2",
+                    "src": "455:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -632,11 +682,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1077,
+                  "id": 1076,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "493:20:2",
+                  "scope": 1085,
+                  "src": "480:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -644,10 +694,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1076,
+                    "id": 1075,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "493:6:2",
+                    "src": "480:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -658,11 +708,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1079,
+                  "id": 1078,
                   "name": "interval",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "523:15:2",
+                  "scope": 1085,
+                  "src": "510:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -670,10 +720,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1078,
+                    "id": 1077,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "523:6:2",
+                    "src": "510:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -684,11 +734,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1081,
-                  "name": "isRevacable",
+                  "id": 1080,
+                  "name": "isRevocable",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "548:16:2",
+                  "scope": 1085,
+                  "src": "535:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -696,10 +746,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1080,
+                    "id": 1079,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "548:4:2",
+                    "src": "535:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -709,19 +759,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "344:226:2"
+              "src": "331:226:2"
             },
             "returnParameters": {
-              "id": 1085,
+              "id": 1084,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1084,
+                  "id": 1083,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "589:7:2",
+                  "scope": 1085,
+                  "src": "576:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -729,10 +779,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1083,
+                    "id": 1082,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "589:4:2",
+                    "src": "576:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -742,10 +792,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "588:9:2"
+              "src": "575:9:2"
             },
-            "scope": 1179,
-            "src": "317:281:2",
+            "scope": 1178,
+            "src": "304:281:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -753,29 +803,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1091,
+            "id": 1090,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "today",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1087,
+              "id": 1086,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "618:2:2"
+              "src": "605:2:2"
             },
             "returnParameters": {
-              "id": 1090,
+              "id": 1089,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1089,
+                  "id": 1088,
                   "name": "dayNumber",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1091,
-                  "src": "644:16:2",
+                  "scope": 1090,
+                  "src": "631:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -783,10 +833,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1088,
+                    "id": 1087,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "644:6:2",
+                    "src": "631:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -796,10 +846,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "643:18:2"
+              "src": "630:18:2"
             },
-            "scope": 1179,
-            "src": "604:58:2",
+            "scope": 1178,
+            "src": "591:58:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -807,23 +857,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1116,
+            "id": 1115,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "vestingForAccountAsOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1096,
+              "id": 1095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1093,
+                  "id": 1092,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "699:19:2",
+                  "scope": 1115,
+                  "src": "686:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -831,10 +881,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1092,
+                    "id": 1091,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "699:7:2",
+                    "src": "686:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -846,11 +896,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1095,
+                  "id": 1094,
                   "name": "onDayOrToday",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "720:19:2",
+                  "scope": 1115,
+                  "src": "707:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -858,10 +908,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1094,
+                    "id": 1093,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "720:6:2",
+                    "src": "707:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -871,19 +921,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "698:42:2"
+              "src": "685:42:2"
             },
             "returnParameters": {
-              "id": 1115,
+              "id": 1114,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1098,
+                  "id": 1097,
                   "name": "amountVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "801:20:2",
+                  "scope": 1115,
+                  "src": "788:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -891,10 +941,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1097,
+                    "id": 1096,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "801:7:2",
+                    "src": "788:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -905,11 +955,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1100,
+                  "id": 1099,
                   "name": "amountNotVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "835:23:2",
+                  "scope": 1115,
+                  "src": "822:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -917,10 +967,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1099,
+                    "id": 1098,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "835:7:2",
+                    "src": "822:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -931,11 +981,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1102,
+                  "id": 1101,
                   "name": "amountOfGrant",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "872:21:2",
+                  "scope": 1115,
+                  "src": "859:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -943,10 +993,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1101,
+                    "id": 1100,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "872:7:2",
+                    "src": "859:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -957,11 +1007,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1104,
+                  "id": 1103,
                   "name": "vestStartDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "907:19:2",
+                  "scope": 1115,
+                  "src": "894:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -969,10 +1019,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1103,
+                    "id": 1102,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "907:6:2",
+                    "src": "894:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -983,11 +1033,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1106,
+                  "id": 1105,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "940:20:2",
+                  "scope": 1115,
+                  "src": "927:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -995,10 +1045,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1105,
+                    "id": 1104,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "940:6:2",
+                    "src": "927:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1009,11 +1059,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1108,
+                  "id": 1107,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "974:19:2",
+                  "scope": 1115,
+                  "src": "961:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1021,10 +1071,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1107,
+                    "id": 1106,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "974:6:2",
+                    "src": "961:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1035,11 +1085,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1110,
+                  "id": 1109,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1007:23:2",
+                  "scope": 1115,
+                  "src": "994:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1047,10 +1097,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1109,
+                    "id": 1108,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1007:6:2",
+                    "src": "994:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1061,11 +1111,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1112,
+                  "id": 1111,
                   "name": "isActive",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1044:13:2",
+                  "scope": 1115,
+                  "src": "1031:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1073,10 +1123,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1111,
+                    "id": 1110,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1044:4:2",
+                    "src": "1031:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1087,11 +1137,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1114,
+                  "id": 1113,
                   "name": "wasRevoked",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1071:15:2",
+                  "scope": 1115,
+                  "src": "1058:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1099,10 +1149,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1113,
+                    "id": 1112,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1071:4:2",
+                    "src": "1058:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1112,10 +1162,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "787:309:2"
+              "src": "774:309:2"
             },
-            "scope": 1179,
-            "src": "668:429:2",
+            "scope": 1178,
+            "src": "655:429:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1123,23 +1173,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1139,
+            "id": 1138,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "vestingAsOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1119,
+              "id": 1118,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1118,
-                  "name": "onDayorToday",
+                  "id": 1117,
+                  "name": "onDayOrToday",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1124:19:2",
+                  "scope": 1138,
+                  "src": "1111:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1147,10 +1197,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1117,
+                    "id": 1116,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1124:6:2",
+                    "src": "1111:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1160,19 +1210,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1123:21:2"
+              "src": "1110:21:2"
             },
             "returnParameters": {
-              "id": 1138,
+              "id": 1137,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1121,
+                  "id": 1120,
                   "name": "amountVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1205:20:2",
+                  "scope": 1138,
+                  "src": "1192:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1180,10 +1230,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1120,
+                    "id": 1119,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1205:7:2",
+                    "src": "1192:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1194,11 +1244,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1123,
+                  "id": 1122,
                   "name": "amountNotVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1239:23:2",
+                  "scope": 1138,
+                  "src": "1226:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1206,10 +1256,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1122,
+                    "id": 1121,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1239:7:2",
+                    "src": "1226:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1220,11 +1270,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1125,
+                  "id": 1124,
                   "name": "amountOfGrant",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1276:21:2",
+                  "scope": 1138,
+                  "src": "1263:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1232,10 +1282,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1124,
+                    "id": 1123,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1276:7:2",
+                    "src": "1263:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1246,11 +1296,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1127,
+                  "id": 1126,
                   "name": "vestStartDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1311:19:2",
+                  "scope": 1138,
+                  "src": "1298:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1258,10 +1308,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1126,
+                    "id": 1125,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1311:6:2",
+                    "src": "1298:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1272,11 +1322,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1129,
+                  "id": 1128,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1344:20:2",
+                  "scope": 1138,
+                  "src": "1331:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1284,10 +1334,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1128,
+                    "id": 1127,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1344:6:2",
+                    "src": "1331:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1298,11 +1348,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1131,
+                  "id": 1130,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1378:19:2",
+                  "scope": 1138,
+                  "src": "1365:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1310,10 +1360,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1130,
+                    "id": 1129,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1378:6:2",
+                    "src": "1365:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1324,11 +1374,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1133,
+                  "id": 1132,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1411:23:2",
+                  "scope": 1138,
+                  "src": "1398:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1336,10 +1386,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1132,
+                    "id": 1131,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1411:6:2",
+                    "src": "1398:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1350,11 +1400,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1135,
+                  "id": 1134,
                   "name": "isActive",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1448:13:2",
+                  "scope": 1138,
+                  "src": "1435:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1362,10 +1412,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1134,
+                    "id": 1133,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1448:4:2",
+                    "src": "1435:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1376,11 +1426,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1137,
+                  "id": 1136,
                   "name": "wasRevoked",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1475:15:2",
+                  "scope": 1138,
+                  "src": "1462:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1388,10 +1438,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1136,
+                    "id": 1135,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1475:4:2",
+                    "src": "1462:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1401,10 +1451,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1191:309:2"
+              "src": "1178:309:2"
             },
-            "scope": 1179,
-            "src": "1103:398:2",
+            "scope": 1178,
+            "src": "1090:398:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1412,23 +1462,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1148,
+            "id": 1147,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "revokeGrant",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1144,
+              "id": 1143,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1141,
-                  "name": "grandHolder",
+                  "id": 1140,
+                  "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1528:19:2",
+                  "scope": 1147,
+                  "src": "1515:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1436,10 +1486,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1140,
+                    "id": 1139,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1528:7:2",
+                    "src": "1515:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1451,11 +1501,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1143,
+                  "id": 1142,
                   "name": "onDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1549:12:2",
+                  "scope": 1147,
+                  "src": "1536:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1463,10 +1513,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1142,
+                    "id": 1141,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1549:6:2",
+                    "src": "1536:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1476,19 +1526,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1527:35:2"
+              "src": "1514:35:2"
             },
             "returnParameters": {
-              "id": 1147,
+              "id": 1146,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1146,
+                  "id": 1145,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1581:4:2",
+                  "scope": 1147,
+                  "src": "1568:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1496,10 +1546,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1145,
+                    "id": 1144,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1581:4:2",
+                    "src": "1568:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1509,10 +1559,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1580:6:2"
+              "src": "1567:6:2"
             },
-            "scope": 1179,
-            "src": "1507:80:2",
+            "scope": 1178,
+            "src": "1494:80:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1520,21 +1570,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1160,
+            "id": 1159,
             "name": "VestingScheduleCreated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1159,
+              "id": 1158,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1150,
+                  "id": 1149,
                   "indexed": true,
                   "name": "vestingLocation",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1631:31:2",
+                  "scope": 1159,
+                  "src": "1618:31:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1542,10 +1592,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1149,
+                    "id": 1148,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1631:7:2",
+                    "src": "1618:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1557,12 +1607,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1152,
+                  "id": 1151,
                   "indexed": false,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1672:20:2",
+                  "scope": 1159,
+                  "src": "1659:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1570,10 +1620,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1151,
+                    "id": 1150,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1672:6:2",
+                    "src": "1659:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1584,12 +1634,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1154,
+                  "id": 1153,
                   "indexed": true,
                   "name": "duration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1702:23:2",
+                  "scope": 1159,
+                  "src": "1689:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1597,10 +1647,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1153,
+                    "id": 1152,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1702:6:2",
+                    "src": "1689:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1611,12 +1661,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1156,
+                  "id": 1155,
                   "indexed": false,
                   "name": "interval",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1735:15:2",
+                  "scope": 1159,
+                  "src": "1722:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1624,10 +1674,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1155,
+                    "id": 1154,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1735:6:2",
+                    "src": "1722:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1638,12 +1688,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1158,
+                  "id": 1157,
                   "indexed": true,
-                  "name": "isRevokable",
+                  "name": "isRevocable",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1760:24:2",
+                  "scope": 1159,
+                  "src": "1747:24:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1651,10 +1701,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1157,
+                    "id": 1156,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1760:4:2",
+                    "src": "1747:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1664,28 +1714,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1621:169:2"
+              "src": "1608:169:2"
             },
-            "src": "1593:198:2"
+            "src": "1580:198:2"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1172,
+            "id": 1171,
             "name": "VestingTokensGranted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1171,
+              "id": 1170,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1162,
+                  "id": 1161,
                   "indexed": true,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1833:27:2",
+                  "scope": 1171,
+                  "src": "1820:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1693,10 +1743,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1161,
+                    "id": 1160,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1833:7:2",
+                    "src": "1820:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1708,12 +1758,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1164,
+                  "id": 1163,
                   "indexed": true,
                   "name": "vestingAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1870:29:2",
+                  "scope": 1171,
+                  "src": "1857:29:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1721,10 +1771,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1163,
+                    "id": 1162,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1870:7:2",
+                    "src": "1857:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1735,12 +1785,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1166,
+                  "id": 1165,
                   "indexed": false,
                   "name": "startDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1909:15:2",
+                  "scope": 1171,
+                  "src": "1896:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1748,10 +1798,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1165,
+                    "id": 1164,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1909:6:2",
+                    "src": "1896:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1762,12 +1812,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1168,
+                  "id": 1167,
                   "indexed": false,
                   "name": "vestingLocation",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1934:23:2",
+                  "scope": 1171,
+                  "src": "1921:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1775,10 +1825,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1167,
+                    "id": 1166,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1934:7:2",
+                    "src": "1921:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1790,12 +1840,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1170,
+                  "id": 1169,
                   "indexed": true,
                   "name": "grantor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1967:23:2",
+                  "scope": 1171,
+                  "src": "1954:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1803,10 +1853,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1169,
+                    "id": 1168,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1967:7:2",
+                    "src": "1954:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1817,28 +1867,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1823:173:2"
+              "src": "1810:173:2"
             },
-            "src": "1797:200:2"
+            "src": "1784:200:2"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1178,
+            "id": 1177,
             "name": "GrantRevoked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1177,
+              "id": 1176,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1174,
+                  "id": 1173,
                   "indexed": true,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1178,
-                  "src": "2022:27:2",
+                  "scope": 1177,
+                  "src": "2009:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1846,10 +1896,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1173,
+                    "id": 1172,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2022:7:2",
+                    "src": "2009:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1861,12 +1911,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1176,
+                  "id": 1175,
                   "indexed": true,
                   "name": "onDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1178,
-                  "src": "2051:20:2",
+                  "scope": 1177,
+                  "src": "2038:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1874,10 +1924,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1175,
+                    "id": 1174,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2051:6:2",
+                    "src": "2038:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1887,46 +1937,46 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2021:51:2"
+              "src": "2008:51:2"
             },
-            "src": "2003:70:2"
+            "src": "1990:70:2"
           }
         ],
-        "scope": 1180,
-        "src": "106:1969:2"
+        "scope": 1179,
+        "src": "94:1968:2"
       }
     ],
-    "src": "0:2076:2"
+    "src": "0:2063:2"
   },
   "legacyAST": {
     "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/contracts/IERC20Vestable.sol",
     "exportedSymbols": {
       "IERC20Vestable": [
-        1179
+        1178
       ]
     },
-    "id": 1180,
+    "id": 1179,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1053,
+        "id": 1052,
         "literals": [
           "solidity",
           "^",
           "0.5",
-          ".0"
+          ".7"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:2"
       },
       {
-        "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
-        "file": "../node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
-        "id": 1054,
+        "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "file": "../openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "id": 1053,
         "nodeType": "ImportDirective",
-        "scope": 1180,
-        "sourceUnit": 2554,
-        "src": "24:80:2",
+        "scope": 1179,
+        "sourceUnit": 3015,
+        "src": "25:67:2",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1936,9 +1986,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1179,
+        "id": 1178,
         "linearizedBaseContracts": [
-          1179
+          1178
         ],
         "name": "IERC20Vestable",
         "nodeType": "ContractDefinition",
@@ -1946,23 +1996,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1065,
+            "id": 1064,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "getInstrinsicVestingSchedule",
+            "name": "getIntrinsicVestingSchedule",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1057,
+              "id": 1056,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1056,
+                  "id": 1055,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "175:19:2",
+                  "scope": 1064,
+                  "src": "162:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1970,10 +2020,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1055,
+                    "id": 1054,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "175:7:2",
+                    "src": "162:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1984,19 +2034,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "174:21:2"
+              "src": "161:21:2"
             },
             "returnParameters": {
-              "id": 1064,
+              "id": 1063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1059,
+                  "id": 1058,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "243:20:2",
+                  "scope": 1064,
+                  "src": "230:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2004,10 +2054,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1058,
+                    "id": 1057,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "243:6:2",
+                    "src": "230:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2018,11 +2068,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1061,
+                  "id": 1060,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "265:19:2",
+                  "scope": 1064,
+                  "src": "252:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2030,10 +2080,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1060,
+                    "id": 1059,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "265:6:2",
+                    "src": "252:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2044,11 +2094,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1063,
+                  "id": 1062,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1065,
-                  "src": "286:23:2",
+                  "scope": 1064,
+                  "src": "273:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2056,10 +2106,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1062,
+                    "id": 1061,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "286:6:2",
+                    "src": "273:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2069,10 +2119,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "242:68:2"
+              "src": "229:68:2"
             },
-            "scope": 1179,
-            "src": "137:174:2",
+            "scope": 1178,
+            "src": "125:173:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2080,23 +2130,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1086,
+            "id": 1085,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "grantVestingTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1082,
+              "id": 1081,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1067,
+                  "id": 1066,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "354:19:2",
+                  "scope": 1085,
+                  "src": "341:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2104,10 +2154,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1066,
+                    "id": 1065,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "354:7:2",
+                    "src": "341:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2119,11 +2169,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1069,
+                  "id": 1068,
                   "name": "totalAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "383:19:2",
+                  "scope": 1085,
+                  "src": "370:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2131,10 +2181,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1068,
+                    "id": 1067,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "383:7:2",
+                    "src": "370:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2145,11 +2195,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1071,
+                  "id": 1070,
                   "name": "vestingAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "412:21:2",
+                  "scope": 1085,
+                  "src": "399:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2157,10 +2207,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1070,
+                    "id": 1069,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "412:7:2",
+                    "src": "399:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2171,11 +2221,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1073,
+                  "id": 1072,
                   "name": "startDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "443:15:2",
+                  "scope": 1085,
+                  "src": "430:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2183,10 +2233,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1072,
+                    "id": 1071,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "443:6:2",
+                    "src": "430:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2197,11 +2247,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1075,
+                  "id": 1074,
                   "name": "duration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "468:15:2",
+                  "scope": 1085,
+                  "src": "455:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2209,10 +2259,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1074,
+                    "id": 1073,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "468:6:2",
+                    "src": "455:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2223,11 +2273,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1077,
+                  "id": 1076,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "493:20:2",
+                  "scope": 1085,
+                  "src": "480:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2235,10 +2285,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1076,
+                    "id": 1075,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "493:6:2",
+                    "src": "480:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2249,11 +2299,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1079,
+                  "id": 1078,
                   "name": "interval",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "523:15:2",
+                  "scope": 1085,
+                  "src": "510:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2261,10 +2311,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1078,
+                    "id": 1077,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "523:6:2",
+                    "src": "510:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2275,11 +2325,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1081,
-                  "name": "isRevacable",
+                  "id": 1080,
+                  "name": "isRevocable",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "548:16:2",
+                  "scope": 1085,
+                  "src": "535:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2287,10 +2337,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1080,
+                    "id": 1079,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "548:4:2",
+                    "src": "535:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2300,19 +2350,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "344:226:2"
+              "src": "331:226:2"
             },
             "returnParameters": {
-              "id": 1085,
+              "id": 1084,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1084,
+                  "id": 1083,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1086,
-                  "src": "589:7:2",
+                  "scope": 1085,
+                  "src": "576:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2320,10 +2370,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1083,
+                    "id": 1082,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "589:4:2",
+                    "src": "576:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2333,10 +2383,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "588:9:2"
+              "src": "575:9:2"
             },
-            "scope": 1179,
-            "src": "317:281:2",
+            "scope": 1178,
+            "src": "304:281:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -2344,29 +2394,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1091,
+            "id": 1090,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "today",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1087,
+              "id": 1086,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "618:2:2"
+              "src": "605:2:2"
             },
             "returnParameters": {
-              "id": 1090,
+              "id": 1089,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1089,
+                  "id": 1088,
                   "name": "dayNumber",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1091,
-                  "src": "644:16:2",
+                  "scope": 1090,
+                  "src": "631:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2374,10 +2424,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1088,
+                    "id": 1087,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "644:6:2",
+                    "src": "631:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2387,10 +2437,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "643:18:2"
+              "src": "630:18:2"
             },
-            "scope": 1179,
-            "src": "604:58:2",
+            "scope": 1178,
+            "src": "591:58:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2398,23 +2448,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1116,
+            "id": 1115,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "vestingForAccountAsOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1096,
+              "id": 1095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1093,
+                  "id": 1092,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "699:19:2",
+                  "scope": 1115,
+                  "src": "686:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2422,10 +2472,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1092,
+                    "id": 1091,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "699:7:2",
+                    "src": "686:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2437,11 +2487,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1095,
+                  "id": 1094,
                   "name": "onDayOrToday",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "720:19:2",
+                  "scope": 1115,
+                  "src": "707:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2449,10 +2499,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1094,
+                    "id": 1093,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "720:6:2",
+                    "src": "707:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2462,19 +2512,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "698:42:2"
+              "src": "685:42:2"
             },
             "returnParameters": {
-              "id": 1115,
+              "id": 1114,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1098,
+                  "id": 1097,
                   "name": "amountVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "801:20:2",
+                  "scope": 1115,
+                  "src": "788:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2482,10 +2532,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1097,
+                    "id": 1096,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "801:7:2",
+                    "src": "788:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2496,11 +2546,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1100,
+                  "id": 1099,
                   "name": "amountNotVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "835:23:2",
+                  "scope": 1115,
+                  "src": "822:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2508,10 +2558,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1099,
+                    "id": 1098,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "835:7:2",
+                    "src": "822:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2522,11 +2572,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1102,
+                  "id": 1101,
                   "name": "amountOfGrant",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "872:21:2",
+                  "scope": 1115,
+                  "src": "859:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2534,10 +2584,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1101,
+                    "id": 1100,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "872:7:2",
+                    "src": "859:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2548,11 +2598,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1104,
+                  "id": 1103,
                   "name": "vestStartDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "907:19:2",
+                  "scope": 1115,
+                  "src": "894:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2560,10 +2610,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1103,
+                    "id": 1102,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "907:6:2",
+                    "src": "894:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2574,11 +2624,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1106,
+                  "id": 1105,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "940:20:2",
+                  "scope": 1115,
+                  "src": "927:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2586,10 +2636,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1105,
+                    "id": 1104,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "940:6:2",
+                    "src": "927:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2600,11 +2650,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1108,
+                  "id": 1107,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "974:19:2",
+                  "scope": 1115,
+                  "src": "961:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2612,10 +2662,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1107,
+                    "id": 1106,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "974:6:2",
+                    "src": "961:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2626,11 +2676,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1110,
+                  "id": 1109,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1007:23:2",
+                  "scope": 1115,
+                  "src": "994:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2638,10 +2688,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1109,
+                    "id": 1108,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1007:6:2",
+                    "src": "994:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2652,11 +2702,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1112,
+                  "id": 1111,
                   "name": "isActive",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1044:13:2",
+                  "scope": 1115,
+                  "src": "1031:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2664,10 +2714,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1111,
+                    "id": 1110,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1044:4:2",
+                    "src": "1031:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2678,11 +2728,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1114,
+                  "id": 1113,
                   "name": "wasRevoked",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1116,
-                  "src": "1071:15:2",
+                  "scope": 1115,
+                  "src": "1058:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2690,10 +2740,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1113,
+                    "id": 1112,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1071:4:2",
+                    "src": "1058:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2703,10 +2753,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "787:309:2"
+              "src": "774:309:2"
             },
-            "scope": 1179,
-            "src": "668:429:2",
+            "scope": 1178,
+            "src": "655:429:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2714,23 +2764,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1139,
+            "id": 1138,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "vestingAsOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1119,
+              "id": 1118,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1118,
-                  "name": "onDayorToday",
+                  "id": 1117,
+                  "name": "onDayOrToday",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1124:19:2",
+                  "scope": 1138,
+                  "src": "1111:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2738,10 +2788,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1117,
+                    "id": 1116,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1124:6:2",
+                    "src": "1111:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2751,19 +2801,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1123:21:2"
+              "src": "1110:21:2"
             },
             "returnParameters": {
-              "id": 1138,
+              "id": 1137,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1121,
+                  "id": 1120,
                   "name": "amountVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1205:20:2",
+                  "scope": 1138,
+                  "src": "1192:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2771,10 +2821,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1120,
+                    "id": 1119,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1205:7:2",
+                    "src": "1192:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2785,11 +2835,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1123,
+                  "id": 1122,
                   "name": "amountNotVested",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1239:23:2",
+                  "scope": 1138,
+                  "src": "1226:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2797,10 +2847,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1122,
+                    "id": 1121,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1239:7:2",
+                    "src": "1226:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2811,11 +2861,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1125,
+                  "id": 1124,
                   "name": "amountOfGrant",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1276:21:2",
+                  "scope": 1138,
+                  "src": "1263:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2823,10 +2873,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1124,
+                    "id": 1123,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1276:7:2",
+                    "src": "1263:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2837,11 +2887,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1127,
+                  "id": 1126,
                   "name": "vestStartDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1311:19:2",
+                  "scope": 1138,
+                  "src": "1298:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2849,10 +2899,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1126,
+                    "id": 1125,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1311:6:2",
+                    "src": "1298:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2863,11 +2913,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1129,
+                  "id": 1128,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1344:20:2",
+                  "scope": 1138,
+                  "src": "1331:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2875,10 +2925,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1128,
+                    "id": 1127,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1344:6:2",
+                    "src": "1331:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2889,11 +2939,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1131,
+                  "id": 1130,
                   "name": "vestDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1378:19:2",
+                  "scope": 1138,
+                  "src": "1365:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2901,10 +2951,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1130,
+                    "id": 1129,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1378:6:2",
+                    "src": "1365:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2915,11 +2965,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1133,
+                  "id": 1132,
                   "name": "vestIntervalDays",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1411:23:2",
+                  "scope": 1138,
+                  "src": "1398:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2927,10 +2977,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1132,
+                    "id": 1131,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1411:6:2",
+                    "src": "1398:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -2941,11 +2991,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1135,
+                  "id": 1134,
                   "name": "isActive",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1448:13:2",
+                  "scope": 1138,
+                  "src": "1435:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2953,10 +3003,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1134,
+                    "id": 1133,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1448:4:2",
+                    "src": "1435:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2967,11 +3017,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1137,
+                  "id": 1136,
                   "name": "wasRevoked",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1139,
-                  "src": "1475:15:2",
+                  "scope": 1138,
+                  "src": "1462:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2979,10 +3029,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1136,
+                    "id": 1135,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1475:4:2",
+                    "src": "1462:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2992,10 +3042,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1191:309:2"
+              "src": "1178:309:2"
             },
-            "scope": 1179,
-            "src": "1103:398:2",
+            "scope": 1178,
+            "src": "1090:398:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3003,23 +3053,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1148,
+            "id": 1147,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "revokeGrant",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1144,
+              "id": 1143,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1141,
-                  "name": "grandHolder",
+                  "id": 1140,
+                  "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1528:19:2",
+                  "scope": 1147,
+                  "src": "1515:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3027,10 +3077,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1140,
+                    "id": 1139,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1528:7:2",
+                    "src": "1515:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3042,11 +3092,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1143,
+                  "id": 1142,
                   "name": "onDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1549:12:2",
+                  "scope": 1147,
+                  "src": "1536:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3054,10 +3104,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1142,
+                    "id": 1141,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1549:6:2",
+                    "src": "1536:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3067,19 +3117,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1527:35:2"
+              "src": "1514:35:2"
             },
             "returnParameters": {
-              "id": 1147,
+              "id": 1146,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1146,
+                  "id": 1145,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "1581:4:2",
+                  "scope": 1147,
+                  "src": "1568:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3087,10 +3137,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1145,
+                    "id": 1144,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1581:4:2",
+                    "src": "1568:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3100,10 +3150,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1580:6:2"
+              "src": "1567:6:2"
             },
-            "scope": 1179,
-            "src": "1507:80:2",
+            "scope": 1178,
+            "src": "1494:80:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -3111,21 +3161,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1160,
+            "id": 1159,
             "name": "VestingScheduleCreated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1159,
+              "id": 1158,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1150,
+                  "id": 1149,
                   "indexed": true,
                   "name": "vestingLocation",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1631:31:2",
+                  "scope": 1159,
+                  "src": "1618:31:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3133,10 +3183,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1149,
+                    "id": 1148,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1631:7:2",
+                    "src": "1618:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3148,12 +3198,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1152,
+                  "id": 1151,
                   "indexed": false,
                   "name": "cliffDuration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1672:20:2",
+                  "scope": 1159,
+                  "src": "1659:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3161,10 +3211,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1151,
+                    "id": 1150,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1672:6:2",
+                    "src": "1659:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3175,12 +3225,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1154,
+                  "id": 1153,
                   "indexed": true,
                   "name": "duration",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1702:23:2",
+                  "scope": 1159,
+                  "src": "1689:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3188,10 +3238,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1153,
+                    "id": 1152,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1702:6:2",
+                    "src": "1689:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3202,12 +3252,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1156,
+                  "id": 1155,
                   "indexed": false,
                   "name": "interval",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1735:15:2",
+                  "scope": 1159,
+                  "src": "1722:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3215,10 +3265,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1155,
+                    "id": 1154,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1735:6:2",
+                    "src": "1722:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3229,12 +3279,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1158,
+                  "id": 1157,
                   "indexed": true,
-                  "name": "isRevokable",
+                  "name": "isRevocable",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1160,
-                  "src": "1760:24:2",
+                  "scope": 1159,
+                  "src": "1747:24:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3242,10 +3292,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1157,
+                    "id": 1156,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1760:4:2",
+                    "src": "1747:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3255,28 +3305,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1621:169:2"
+              "src": "1608:169:2"
             },
-            "src": "1593:198:2"
+            "src": "1580:198:2"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1172,
+            "id": 1171,
             "name": "VestingTokensGranted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1171,
+              "id": 1170,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1162,
+                  "id": 1161,
                   "indexed": true,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1833:27:2",
+                  "scope": 1171,
+                  "src": "1820:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3284,10 +3334,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1161,
+                    "id": 1160,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1833:7:2",
+                    "src": "1820:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3299,12 +3349,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1164,
+                  "id": 1163,
                   "indexed": true,
                   "name": "vestingAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1870:29:2",
+                  "scope": 1171,
+                  "src": "1857:29:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3312,10 +3362,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1163,
+                    "id": 1162,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1870:7:2",
+                    "src": "1857:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3326,12 +3376,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1166,
+                  "id": 1165,
                   "indexed": false,
                   "name": "startDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1909:15:2",
+                  "scope": 1171,
+                  "src": "1896:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3339,10 +3389,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1165,
+                    "id": 1164,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1909:6:2",
+                    "src": "1896:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3353,12 +3403,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1168,
+                  "id": 1167,
                   "indexed": false,
                   "name": "vestingLocation",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1934:23:2",
+                  "scope": 1171,
+                  "src": "1921:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3366,10 +3416,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1167,
+                    "id": 1166,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1934:7:2",
+                    "src": "1921:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3381,12 +3431,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1170,
+                  "id": 1169,
                   "indexed": true,
                   "name": "grantor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "1967:23:2",
+                  "scope": 1171,
+                  "src": "1954:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3394,10 +3444,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1169,
+                    "id": 1168,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1967:7:2",
+                    "src": "1954:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3408,28 +3458,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1823:173:2"
+              "src": "1810:173:2"
             },
-            "src": "1797:200:2"
+            "src": "1784:200:2"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1178,
+            "id": 1177,
             "name": "GrantRevoked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1177,
+              "id": 1176,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1174,
+                  "id": 1173,
                   "indexed": true,
                   "name": "grantHolder",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1178,
-                  "src": "2022:27:2",
+                  "scope": 1177,
+                  "src": "2009:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3437,10 +3487,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1173,
+                    "id": 1172,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2022:7:2",
+                    "src": "2009:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3452,12 +3502,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1176,
+                  "id": 1175,
                   "indexed": true,
                   "name": "onDay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1178,
-                  "src": "2051:20:2",
+                  "scope": 1177,
+                  "src": "2038:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3465,10 +3515,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1175,
+                    "id": 1174,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2051:6:2",
+                    "src": "2038:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -3478,24 +3528,24 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2021:51:2"
+              "src": "2008:51:2"
             },
-            "src": "2003:70:2"
+            "src": "1990:70:2"
           }
         ],
-        "scope": 1180,
-        "src": "106:1969:2"
+        "scope": 1179,
+        "src": "94:1968:2"
       }
     ],
-    "src": "0:2076:2"
+    "src": "0:2063:2"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+    "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-08-30T11:01:41.497Z",
+  "updatedAt": "2019-09-04T13:40:08.344Z",
   "devdoc": {
     "methods": {}
   },

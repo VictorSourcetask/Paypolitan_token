@@ -1,8 +1,9 @@
-pragma solidity ^0.5.0;
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+pragma solidity ^0.5.7;
+
+import "../openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 interface IERC20Vestable {
-    function getInstrinsicVestingSchedule(address grantHolder)
+    function getIntrinsicVestingSchedule(address grantHolder)
         external
         view
         returns (uint32 cliffDuration, uint32 vestDuration, uint32 vestIntervalDays);
@@ -15,7 +16,7 @@ interface IERC20Vestable {
         uint32 duration,
         uint32 cliffDuration,
         uint32 interval,
-        bool isRevacable
+        bool isRevocable
     ) external returns (bool ok);
 
     function today() external view returns (uint32 dayNumber);
@@ -35,7 +36,7 @@ interface IERC20Vestable {
             bool wasRevoked
         );
 
-    function vestingAsOf(uint32 onDayorToday)
+    function vestingAsOf(uint32 onDayOrToday)
         external
         view
         returns (
@@ -50,14 +51,14 @@ interface IERC20Vestable {
             bool wasRevoked
         );
 
-    function revokeGrant(address grandHolder, uint32 onDay) external returns (bool);
+    function revokeGrant(address grantHolder, uint32 onDay) external returns (bool);
 
     event VestingScheduleCreated(
         address indexed vestingLocation,
         uint32 cliffDuration,
         uint32 indexed duration,
         uint32 interval,
-        bool indexed isRevokable
+        bool indexed isRevocable
     );
 
     event VestingTokensGranted(

@@ -21,7 +21,7 @@ function getWalletProvider() {
                 "https://rinkeby.infura.io/v3/2694f180955f4061af2ea57208316964"
             )
         );
-    else return ganache.provider();
+    else return ganache.provider({ gasLimit: 8000000 });
 }
 
 async function deployContract(
@@ -42,6 +42,9 @@ async function deployContract(
     this.gasPrice = await web3.eth.getGasPrice();
     this.accounts = await web3.eth.getAccounts();
 
+    // const balance = await web3.eth.getBalance(this.accounts[0]);
+    // console.log(`Balance: ${balance}`);
+
     // Read in the compiled contract code and fetch ABI description and the bytecode as objects
     const compiled = JSON.parse(fs.readFileSync("./output/contracts.json"));
     if (
@@ -59,7 +62,7 @@ async function deployContract(
         .deploy({ data: "0x" + bytecode, arguments: constructorArgs })
         .send({
             from: this.accounts[0],
-            gas: "6720000"
+            gas: "8000000"
         }); /* This is AT the block limit and CANNOT be increased! */
 
     if (this.contract.options.address == null) {
@@ -96,4 +99,4 @@ async function deploy(contractFullPath, doBuild, constructorArgs, theLogger) {
 module.exports = deploy;
 
 // Uncomment to make it run if invoked directly from the command line
-deploy(null, true, [], console);
+// deploy(null, true, [], console);

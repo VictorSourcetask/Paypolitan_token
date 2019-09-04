@@ -7,13 +7,13 @@ let attempts = 0;
 let successes = 0;
 
 function logNamedValue(name, thing) {
-    console.log(name + ": " + util.inspect(thing, false, null, true /** enable colors */));
+    console.log(name + ": " + util.inspect(thing, false, null, true /* enable colors */));
 }
 
 function resultFunc() {
-    //used temporarily when debugging
+    // Used temporarily when debugging
     function log(label) {
-        logNamedValue(label ? label : "Result: ", result);
+        logNamedValue(label ? label : "Result:", result);
     }
     this.log = log;
 
@@ -91,17 +91,21 @@ function resultFunc() {
 
     return Object.freeze({
         log: log,
+
         set: set,
         value: get,
+
         checkValuesAreEqual: _checkValuesAreEqual,
         checkValuesAreNotEqual: _checkValuesAreNotEqual,
+
         fail: _fail,
         checkIsEqual: _checkIsEqual,
         checkIsNotEqual: _checkIsNotEqual,
         checkIsTrue: checkIsTrue,
-        checkDidFail: checkDidFail,
+        checkDidFail: checkDidFail, // checkDidFail (after expectFail) is an alias for checkIsTrue (i.e. was successful).
         checkIsFalse: checkIsFalse,
-        checkIsTransactionOk: checkTransactionOk,
+        checkTransactionOk: checkTransactionOk,
+
         getResults: getResults
     });
 }

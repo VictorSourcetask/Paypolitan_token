@@ -1,22 +1,23 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.7;
 
-import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "../openzeppelin-contracts/contracts/ownership/Ownable.sol";
+import "../openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 contract VerifiedAccount is ERC20, Ownable {
     mapping(address => bool) private _isRegistered;
 
     constructor() internal {
-        // the smart contract starts off registering iself, since address is known
+        // The smart contract starts off registering itself, since address is known.
         registerAccount();
     }
 
     event AccountRegistered(address indexed account);
 
-    /// this registers the calling wallet address as a known address. Operations that
-    /// transfer responsibility may require the target account to be a registered account
-    /// to protect the system from getting into a state where administration or a large amount of funds
-    /// can become forever innaccesible
+    /**
+     * This registers the calling wallet address as a known address. Operations that transfer responsibility
+     * may require the target account to be a registered account, to protect the system from getting into a
+     * state where administration or a large amount of funds can become forever inaccessible.
+     */
     function registerAccount() public returns (bool ok) {
         _isRegistered[msg.sender] = true;
         emit AccountRegistered(msg.sender);
@@ -36,7 +37,10 @@ contract VerifiedAccount is ERC20, Ownable {
         _;
     }
 
-    /// Safe ERC20 methods
+    // =========================================================================
+    // === Safe ERC20 methods
+    // =========================================================================
+
     function safeTransfer(address to, uint256 value)
         public
         onlyExistingAccount(to)
@@ -64,8 +68,14 @@ contract VerifiedAccount is ERC20, Ownable {
         return true;
     }
 
-    /// safe ownership transfer
-    /// allows the current owner to transfer control of the contract to a newOwner
+    // =========================================================================
+    // === Safe ownership transfer
+    // =========================================================================
+
+    /**
+     * @dev Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
+     */
     function transferOwnership(address newOwner) public onlyExistingAccount(newOwner) onlyOwner {
         super.transferOwnership(newOwner);
     }

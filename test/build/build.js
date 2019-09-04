@@ -197,7 +197,8 @@ function readSources(contractFullPath) {
 // We do this to make openzeppelin-solidity's implementation of Pausable.sol have our required behavior
 // without having to change the calling code. See comments in PauserRole.sol for details about why we differ.
 function substituteDependencyLine(line) {
-    if (line.indexOf("PauserRole.sol") >= 0) return 'import "../../../../contracts/PauserRole.sol"';
+    // console.log(line);
+    if (line.indexOf("PauserRole.sol") >= 0) return 'import "../../../contracts/PauserRole.sol"';
     else return line;
 }
 

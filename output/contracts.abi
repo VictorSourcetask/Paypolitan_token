@@ -260,37 +260,6 @@
         "type": "address"
       }
     ],
-    "name": "getInstrinsicVestingSchedule",
-    "outputs": [
-      {
-        "internalType": "uint32",
-        "name": "cliffDuration",
-        "type": "uint32"
-      },
-      {
-        "internalType": "uint32",
-        "name": "vestDuration",
-        "type": "uint32"
-      },
-      {
-        "internalType": "uint32",
-        "name": "vestIntervalDays",
-        "type": "uint32"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "grantHolder",
-        "type": "address"
-      }
-    ],
     "name": "getIntrinsicVestingSchedule",
     "outputs": [
       {
@@ -1416,7 +1385,7 @@
       {
         "indexed": true,
         "internalType": "bool",
-        "name": "isRevokable",
+        "name": "isRevocable",
         "type": "bool"
       }
     ],
