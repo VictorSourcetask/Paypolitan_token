@@ -8,15 +8,15 @@
       "type": "constructor"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol\":\"Context\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol\":{\"keccak256\":\"0x67c62231507825c6e82a6cb07104a47a09a4077b168a8d7a87c4a6b87c28889c\",\"urls\":[\"bzz-raw://3096222c1a293f7b694c8e0669caa2e5cfb73a16cbdade17c25b6dfb31d037df\",\"dweb:/ipfs/QmP1T38aRxrwdoTWgumBwk9WwSAxzDJQgSX6Wh663g4jPq\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol\":\"Context\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol\":{\"keccak256\":\"0x67c62231507825c6e82a6cb07104a47a09a4077b168a8d7a87c4a6b87c28889c\",\"urls\":[\"bzz-raw://3096222c1a293f7b694c8e0669caa2e5cfb73a16cbdade17c25b6dfb31d037df\",\"dweb:/ipfs/QmP1T38aRxrwdoTWgumBwk9WwSAxzDJQgSX6Wh663g4jPq\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/*\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with GSN meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\ncontract Context {\n    // Empty internal constructor, to prevent people from mistakenly deploying\n    // an instance of this contract, which should be used via inheritance.\n    constructor () internal { }\n    // solhint-disable-previous-line no-empty-blocks\n\n    function _msgSender() internal view returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view returns (bytes memory) {\n        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691\n        return msg.data;\n    }\n}\n",
-  "sourcePath": "/home/adrian/work/paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
+  "sourcePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
   "ast": {
-    "absolutePath": "/home/adrian/work/paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
+    "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
     "exportedSymbols": {
       "Context": [
         2032
@@ -298,7 +298,7 @@
     "src": "0:1107:9"
   },
   "legacyAST": {
-    "absolutePath": "/home/adrian/work/paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
+    "absolutePath": "/home/adrian/work/paypolitan_token/Paypolitan_token/openzeppelin-contracts/contracts/GSN/Context.sol",
     "exportedSymbols": {
       "Context": [
         2032
@@ -585,7 +585,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.13",
-  "updatedAt": "2019-09-04T09:12:52.852Z",
+  "updatedAt": "2019-09-11T08:55:43.214Z",
   "devdoc": {
     "methods": {}
   },

@@ -19,6 +19,10 @@ const input = {
     language: "Solidity",
     sources: {},
     settings: {
+        optimizer: {
+            enabled: true,
+            runs: 200
+        },
         outputSelection: {
             "*": {
                 "*": [
@@ -35,6 +39,10 @@ const input_monolithic = {
     language: "Solidity",
     sources: {},
     settings: {
+        optimizer: {
+            enabled: true,
+            runs: 200
+        },
         outputSelection: {
             "PaypolitanToken.sol": {
                 PaypolitanToken: [
