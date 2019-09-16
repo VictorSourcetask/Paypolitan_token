@@ -286,9 +286,9 @@ describe("PaypolitanToken", () => {
             await subtest("6a. account0 is owner, others are not", async () => {
                 result.set(await PaypolitanToken.methods.isOwner().call());
                 result.checkIsTrue();
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: account1 }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: account1}));
                 result.checkIsFalse();
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: account2 }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: account2}));
                 result.checkIsFalse();
             }).catch(catcher);
         });
@@ -297,14 +297,12 @@ describe("PaypolitanToken", () => {
             if (!PaypolitanToken) return;
 
             await subtest("transfer of contract ownership to account 1", async () => {
-                result.set(
-                    await PaypolitanToken.methods.registerAccount().send({ from: account1 })
-                );
+                result.set(await PaypolitanToken.methods.registerAccount().send({from: account1}));
                 result.checkTransactionOk();
                 result.set(
                     await PaypolitanToken.methods
                         .transferOwnership(account1)
-                        .send({ from: owner, gas: XFEROWNERGAS })
+                        .send({from: owner, gas: XFEROWNERGAS})
                 );
                 result.checkTransactionOk();
                 result.set(await PaypolitanToken.methods.owner().call());
@@ -315,9 +313,9 @@ describe("PaypolitanToken", () => {
             await subtest("7a. account1 is owner others are not", async () => {
                 result.set(await PaypolitanToken.methods.isOwner().call());
                 result.checkIsFalse();
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: account1 }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: account1}));
                 result.checkIsTrue();
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: account2 }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: account2}));
                 result.checkIsFalse();
             }).catch(catcher);
         });
@@ -326,9 +324,7 @@ describe("PaypolitanToken", () => {
             if (!PaypolitanToken) return;
 
             await subtest("8a. transfer ownership from non-owner account1", async () => {
-                result.set(
-                    await PaypolitanToken.methods.registerAccount().send({ from: account2 })
-                );
+                result.set(await PaypolitanToken.methods.registerAccount().send({from: account2}));
                 result.checkTransactionOk();
                 result.set(
                     await expectFail(
@@ -361,13 +357,13 @@ describe("PaypolitanToken", () => {
             if (!PaypolitanToken) return;
             result.set(
                 await expectFail(
-                    PaypolitanToken.methods.renounceOwnership().send({ from: owner })
+                    PaypolitanToken.methods.renounceOwnership().send({from: owner})
                 ).catch(catcher)
             );
             result.checkDidFail();
             result.set(
                 await expectFail(
-                    PaypolitanToken.methods.renounceOwnership().send({ from: account1 })
+                    PaypolitanToken.methods.renounceOwnership().send({from: account1})
                 ).catch(catcher)
             );
             result.checkDidFail();
@@ -384,7 +380,7 @@ describe("PaypolitanToken", () => {
                 result.set(
                     await PaypolitanToken.methods
                         .transfer(account1, tokensToWei(10000))
-                        .send({ from: owner })
+                        .send({from: owner})
                 );
                 result.checkTransactionOk();
                 result.set(await PaypolitanToken.methods.balanceOf(owner).call());
@@ -399,7 +395,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .transfer(account2, tokensToWei(1000))
-                            .send({ from: account1 })
+                            .send({from: account1})
                     );
                     result.checkTransactionOk();
                     // Verify new balances.
@@ -417,7 +413,7 @@ describe("PaypolitanToken", () => {
                         await expectFail(
                             PaypolitanToken.methods
                                 .transfer(account2, tokensToWei(999999))
-                                .send({ from: account1 })
+                                .send({from: account1})
                         ).catch(catcher)
                     );
                     result.checkDidFail();
@@ -435,7 +431,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .transfer(account2, tokensToWei(9000))
-                            .send({ from: account1 })
+                            .send({from: account1})
                     );
                     result.checkTransactionOk();
                     // Verify new balances.
@@ -451,10 +447,10 @@ describe("PaypolitanToken", () => {
     // use the approve/transfer function to transfer funds
     async function approveThenTransferFunds(from, to, amount) {
         // In the 'from' account, approve 'to' to be able to take funds.
-        result.set(await PaypolitanToken.methods.approve(to, amount).send({ from: from }));
+        result.set(await PaypolitanToken.methods.approve(to, amount).send({from: from}));
         result.checkTransactionOk("approveThenTransferFunds(): approve failed");
         // Transfer approved funds 'from' -> 'to'.
-        result.set(await PaypolitanToken.methods.transferFrom(from, to, amount).send({ from: to }));
+        result.set(await PaypolitanToken.methods.transferFrom(from, to, amount).send({from: to}));
         result.checkTransactionOk("approveThenTransferFunds(): transferFrom failed");
     }
 
@@ -502,7 +498,7 @@ describe("PaypolitanToken", () => {
                     );
                     result.checkDidFail();
                     // Revoke the failed approval
-                    await PaypolitanToken.methods.approve(account2, 0).send({ from: account1 });
+                    await PaypolitanToken.methods.approve(account2, 0).send({from: account1});
                     // Verify nothing changed.
                     result.set(await PaypolitanToken.methods.balanceOf(account1).call());
                     result.checkIsEqual(tokensToWei(9000));
@@ -544,7 +540,7 @@ describe("PaypolitanToken", () => {
                     await expectFail(
                         PaypolitanToken.methods
                             .transferFrom(owner, account2, tokensToWei(5 * ONE_MILLION))
-                            .send({ from: account1 })
+                            .send({from: account1})
                     ).catch(catcher)
                 );
                 result.checkDidFail();
@@ -555,7 +551,7 @@ describe("PaypolitanToken", () => {
                     await expectFail(
                         PaypolitanToken.methods
                             .transferFrom(account1, account2, tokensToWei(5 * ONE_MILLION))
-                            .send({ from: owner })
+                            .send({from: owner})
                     ).catch(catcher)
                 );
                 result.checkDidFail();
@@ -566,7 +562,7 @@ describe("PaypolitanToken", () => {
                     await expectFail(
                         PaypolitanToken.methods
                             .transferFrom(owner, account1, tokensToWei(5 * ONE_MILLION))
-                            .send({ from: owner })
+                            .send({from: owner})
                     ).catch(catcher)
                 );
                 result.checkDidFail();
@@ -577,7 +573,7 @@ describe("PaypolitanToken", () => {
                     await expectFail(
                         PaypolitanToken.methods
                             .transferFrom(owner, owner, tokensToWei(5 * ONE_MILLION))
-                            .send({ from: owner })
+                            .send({from: owner})
                     ).catch(catcher)
                 );
                 result.checkDidFail();
@@ -601,7 +597,7 @@ describe("PaypolitanToken", () => {
                 result.set(
                     await PaypolitanToken.methods
                         .transfer(account1, tokensToWei(100 * ONE_MILLION))
-                        .send({ from: owner })
+                        .send({from: owner})
                 );
                 result.checkTransactionOk();
                 result.set(await PaypolitanToken.methods.balanceOf(account1).call());
@@ -610,7 +606,7 @@ describe("PaypolitanToken", () => {
                 result.set(
                     await PaypolitanToken.methods
                         .burn(tokensToWei(40 * ONE_MILLION))
-                        .send({ from: account1 })
+                        .send({from: account1})
                 );
                 result.checkTransactionOk();
                 // Confirm tokens are gone
@@ -629,7 +625,7 @@ describe("PaypolitanToken", () => {
                 result.set(
                     await PaypolitanToken.methods
                         .burn(tokensToWei(50 * ONE_MILLION))
-                        .send({ from: owner })
+                        .send({from: owner})
                 );
                 result.checkTransactionOk();
                 // Confirm tokens are gone
@@ -674,7 +670,7 @@ describe("PaypolitanToken", () => {
         result.set(
             await PaypolitanToken.methods
                 .grantVestingTokens(account, ...grantParams, ...vestingSchedule)
-                .send({ from: owner, gas: GRANTGAS })
+                .send({from: owner, gas: GRANTGAS})
         );
         result.checkTransactionOk();
 
@@ -723,7 +719,7 @@ describe("PaypolitanToken", () => {
         // Check vesting is gone
         accountBalance = await PaypolitanToken.methods
             .vestingAsOf(Math.floor(startDay))
-            .call({ from: account, gas: VESTASOFGAS });
+            .call({from: account, gas: VESTASOFGAS});
         checkAreEqual(accountBalance[0], 0, "grantee tokens vested");
         checkAreEqual(accountBalance[1], vestingAmount, "grantee tokens not vested");
         checkAreEqual(accountBalance[2], vestingAmount, "grantee total granted tokens");
@@ -756,7 +752,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingAsOf(Math.floor(onDay))
-                    .call({ from: account, gas: VESTASOFGAS })
+                    .call({from: account, gas: VESTASOFGAS})
             );
             checkResult("vestingAsOf() ");
 
@@ -764,7 +760,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingForAccountAsOf(account, Math.floor(onDay))
-                    .call({ from: account })
+                    .call({from: account})
             );
             checkResult("vestingForAccountAsOf() ");
 
@@ -859,9 +855,7 @@ describe("PaypolitanToken", () => {
 
     async function testAccountHasNoGrant(account, wasRevoked, onDay) {
         result.set(
-            await PaypolitanToken.methods
-                .vestingAsOf(onDay)
-                .call({ from: account, gas: VESTASOFGAS })
+            await PaypolitanToken.methods.vestingAsOf(onDay).call({from: account, gas: VESTASOFGAS})
         );
         checkAreEqual(result.value()[0], 0); // vestedAmount should be 0
 
@@ -913,18 +907,18 @@ describe("PaypolitanToken", () => {
 
             // Mix things up by changing the contract owner before continuing to issue more grants.
             // This confirms that a new owner can issue grants just the same (given enough funds).
-            result.set(await PaypolitanToken.methods.registerAccount().send({ from: account9 }));
+            result.set(await PaypolitanToken.methods.registerAccount().send({from: account9}));
             result.checkTransactionOk();
             result.set(
                 await PaypolitanToken.methods
                     .safeTransfer(account9, tokensToWei(100 * ONE_MILLION))
-                    .send({ from: owner })
+                    .send({from: owner})
             );
             result.checkTransactionOk();
             result.set(
                 await PaypolitanToken.methods
                     .transferOwnership(account9)
-                    .send({ from: owner, gas: XFEROWNERGAS })
+                    .send({from: owner, gas: XFEROWNERGAS})
             );
             result.checkTransactionOk();
 
@@ -1066,13 +1060,13 @@ describe("PaypolitanToken", () => {
 
             // Fund account 9 so it can issue grants, then make it owner.
             const newOwner = account9;
-            await PaypolitanToken.methods.registerAccount().send({ from: newOwner });
+            await PaypolitanToken.methods.registerAccount().send({from: newOwner});
             await PaypolitanToken.methods
                 .safeTransfer(newOwner, tokensToWei(100 * ONE_MILLION))
-                .send({ from: owner });
+                .send({from: owner});
             await PaypolitanToken.methods
                 .transferOwnership(newOwner)
-                .send({ from: owner, gas: XFEROWNERGAS });
+                .send({from: owner, gas: XFEROWNERGAS});
 
             // Transferred ownership: In this test from here on, owner is now account9.
 
@@ -1167,7 +1161,7 @@ describe("PaypolitanToken", () => {
                         await expectFail(
                             PaypolitanToken.methods
                                 .transfer(account2, tokensToWei(1))
-                                .send({ from: account1 })
+                                .send({from: account1})
                         ).catch(catcher)
                     );
                     result.checkDidFail();
@@ -1189,7 +1183,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .transfer(account4, tokensToWei(1))
-                            .send({ from: account3 })
+                            .send({from: account3})
                     );
                     result.checkTransactionOk(
                         "Transfer of 1 token from grant was supposed to work"
@@ -1200,7 +1194,7 @@ describe("PaypolitanToken", () => {
                         await expectFail(
                             PaypolitanToken.methods
                                 .transfer(account4, tokensToWei(2))
-                                .send({ from: account3 })
+                                .send({from: account3})
                         ).catch(catcher)
                     );
                     result.checkDidFail();
@@ -1233,7 +1227,7 @@ describe("PaypolitanToken", () => {
         result.set(
             await PaypolitanToken.methods
                 .vestingAsOf(revokeOnDay)
-                .call({ from: account, gas: VESTASOFGAS })
+                .call({from: account, gas: VESTASOFGAS})
         );
         const vestedAsOfDay = result.value()[0];
         const notVestedAsOfDay = result.value()[1];
@@ -1262,7 +1256,7 @@ describe("PaypolitanToken", () => {
         result.set(
             await PaypolitanToken.methods
                 .revokeGrant(account, revokeOnDay)
-                .send({ from: owner, gas: REVOKEONGAS })
+                .send({from: owner, gas: REVOKEONGAS})
         );
         result.checkTransactionOk("revokeGrant() failed");
 
@@ -1317,7 +1311,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .revokeGrant(account1, TODAY_DAYS)
-                            .send({ from: owner, gas: REVOKEONGAS })
+                            .send({from: owner, gas: REVOKEONGAS})
                     );
                     result.checkTransactionOk("revokeGrant() failed");
                 }
@@ -1420,7 +1414,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .revokeGrant(account1, TODAY_DAYS)
-                            .send({ from: owner, gas: REVOKEONGAS })
+                            .send({from: owner, gas: REVOKEONGAS})
                     );
                     result.checkTransactionOk("revokeGrant() failed");
                 }
@@ -1456,7 +1450,7 @@ describe("PaypolitanToken", () => {
                     result.set(
                         await PaypolitanToken.methods
                             .revokeGrant(account1, TODAY_DAYS)
-                            .send({ from: owner, gas: REVOKEONGAS })
+                            .send({from: owner, gas: REVOKEONGAS})
                     );
                     result.checkTransactionOk("revokeGrant() failed");
                 }
@@ -1518,7 +1512,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingAsOf(Math.floor(TODAY_DAYS))
-                    .call({ from: owner, gas: VESTASOFGAS })
+                    .call({from: owner, gas: VESTASOFGAS})
             );
             checkAreEqual(
                 Object.size(result.value()),
@@ -1528,7 +1522,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingAsOf(Math.floor(TODAY_DAYS))
-                    .call({ from: account1, gas: VESTASOFGAS })
+                    .call({from: account1, gas: VESTASOFGAS})
             );
             checkAreEqual(
                 Object.size(result.value()),
@@ -1540,7 +1534,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingForAccountAsOf(account1, Math.floor(TODAY_DAYS))
-                    .call({ from: owner })
+                    .call({from: owner})
             );
             checkAreEqual(
                 Object.size(result.value()),
@@ -1551,7 +1545,7 @@ describe("PaypolitanToken", () => {
             result.set(
                 await PaypolitanToken.methods
                     .vestingForAccountAsOf(account1, Math.floor(TODAY_DAYS))
-                    .call({ from: account1 })
+                    .call({from: account1})
             );
             checkAreEqual(
                 Object.size(result.value()),
@@ -1564,7 +1558,7 @@ describe("PaypolitanToken", () => {
                 await expectFail(
                     PaypolitanToken.methods
                         .vestingForAccountAsOf(account1, Math.floor(TODAY_DAYS))
-                        .call({ from: account2 })
+                        .call({from: account2})
                 ).catch(catcher)
             );
             result.checkDidFail();
@@ -1581,21 +1575,21 @@ describe("PaypolitanToken", () => {
         addRoleParams,
         removeRoleMethod
     ) {
-        result.set(await PaypolitanToken.methods.isOwner().call({ from: owner }));
+        result.set(await PaypolitanToken.methods.isOwner().call({from: owner}));
         result.checkIsTrue("Expected original owner to be owner");
-        result.set(await PaypolitanToken.methods[isRoleMethod](owner).call({ from: owner }));
+        result.set(await PaypolitanToken.methods[isRoleMethod](owner).call({from: owner}));
         result.checkIsTrue("Expected original owner to have role " + roleName);
 
         await subtest(testNumber + "a. transfer contract ownership to account 1", async () => {
-            result.set(await PaypolitanToken.methods.registerAccount().send({ from: account1 }));
+            result.set(await PaypolitanToken.methods.registerAccount().send({from: account1}));
             result.checkTransactionOk();
             result.set(
                 await PaypolitanToken.methods
                     .transferOwnership(account1)
-                    .send({ from: owner, gas: XFEROWNERGAS })
+                    .send({from: owner, gas: XFEROWNERGAS})
             );
             result.checkTransactionOk("should have been able to transfer ownership");
-            result.set(await PaypolitanToken.methods.owner().call({ from: owner }));
+            result.set(await PaypolitanToken.methods.owner().call({from: owner}));
             result.checkIsEqual(account1);
         }).catch(catcher);
 
@@ -1606,11 +1600,9 @@ describe("PaypolitanToken", () => {
                 "b. Check that original owner is no longer owner and no longer has role " +
                 roleName,
             async () => {
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: owner }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: owner}));
                 result.checkIsFalse("after transfer, original owner should no longer be owner");
-                result.set(
-                    await PaypolitanToken.methods[isRoleMethod](owner).call({ from: owner })
-                );
+                result.set(await PaypolitanToken.methods[isRoleMethod](owner).call({from: owner}));
                 result.checkIsFalse(
                     "after transfer, original owner should no longer have role " + roleName
                 );
@@ -1620,10 +1612,10 @@ describe("PaypolitanToken", () => {
         await subtest(
             testNumber + "c. Check that new owner is now both owner and has role " + roleName,
             async () => {
-                result.set(await PaypolitanToken.methods.isOwner().call({ from: account1 }));
+                result.set(await PaypolitanToken.methods.isOwner().call({from: account1}));
                 result.checkIsTrue("after transfer, account1 should be owner");
                 result.set(
-                    await PaypolitanToken.methods[isRoleMethod](account1).call({ from: account1 })
+                    await PaypolitanToken.methods[isRoleMethod](account1).call({from: account1})
                 );
                 result.checkIsTrue("after transfer, account1 should have role " + roleName);
             }
@@ -1635,6 +1627,8 @@ describe("PaypolitanToken", () => {
                 roleName +
                 " from owner account1, leaving no other account having role (specifically allowed!)",
             async () => {
+                // console.log(PaypolitanToken.methods);
+                console.log(`Remove role method: ${removeRoleMethod}`);
                 result.set(
                     await PaypolitanToken.methods[removeRoleMethod](account1).send({
                         from: account1
@@ -1644,12 +1638,10 @@ describe("PaypolitanToken", () => {
                     "account1 as new owner should have been able to remove self as having role " +
                         roleName
                 );
-                result.set(
-                    await PaypolitanToken.methods[isRoleMethod](owner).call({ from: owner })
-                );
+                result.set(await PaypolitanToken.methods[isRoleMethod](owner).call({from: owner}));
                 result.checkIsFalse("original owner should not have role " + roleName);
                 result.set(
-                    await PaypolitanToken.methods[isRoleMethod](account1).call({ from: account1 })
+                    await PaypolitanToken.methods[isRoleMethod](account1).call({from: account1})
                 );
                 result.checkIsFalse("account1 should not have role " + roleName + " either");
             }
@@ -1657,31 +1649,39 @@ describe("PaypolitanToken", () => {
 
         await subtest(testNumber + "e. test addRoleMethod() success cases", async () => {
             result.set(
-                await ProxyToken.methods[addRoleMethod](account5, ...addRoleParams).send({
+                await PaypolitanToken.methods[addRoleMethod](account5, ...addRoleParams).send({
                     from: account1
                 })
             );
             result.checkTransactionOk(
                 "account1 as new owner should have been able to give account5 role " + roleName
             );
-            result.set(await ProxyToken.methods[isRoleMethod](account5).call({ from: account5 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account5).call({from: account5})
+            );
             result.checkIsTrue("account5 should now have role " + roleName);
-            result.set(await ProxyToken.methods[isRoleMethod](account5).call({ from: account1 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account5).call({from: account1})
+            );
             result.checkIsTrue(
                 "account5 should now have role " +
                     roleName +
                     " (even if other account performs the inspection)"
             );
             result.set(
-                await ProxyToken.methods[removeRoleMethod](account5).send({ from: account1 })
+                await PaypolitanToken.methods[removeRoleMethod](account5).send({from: account1})
             );
             result.checkTransactionOk(
                 "account1 as new owner should have been able to remove account5 as having role " +
                     roleName
             );
-            result.set(await ProxyToken.methods[isRoleMethod](account5).call({ from: account5 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account5).call({from: account5})
+            );
             result.checkIsFalse("account5 should no longer have role " + roleName);
-            result.set(await ProxyToken.methods[isRoleMethod](account5).call({ from: account1 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account5).call({from: account1})
+            );
             result.checkIsFalse(
                 "account5 should bo longer have role " +
                     roleName +
@@ -1690,33 +1690,37 @@ describe("PaypolitanToken", () => {
         }).catch(catcher);
 
         await subtest(testNumber + "f. test addRoleMethod() failure cases", async () => {
-            result.set(await ProxyToken.methods[isRoleMethod](account3).call({ from: owner }));
+            result.set(await PaypolitanToken.methods[isRoleMethod](account3).call({from: owner}));
             result.checkIsFalse("account3 should start off not having role " + roleName);
             result.set(
                 await expectFail(
-                    ProxyToken.methods[addRoleMethod](account3, ...addRoleParams).send({
+                    PaypolitanToken.methods[addRoleMethod](account3, ...addRoleParams).send({
                         from: owner
                     })
                 ).catch(catcher)
             );
             result.checkDidFail();
-            result.set(await ProxyToken.methods[isRoleMethod](account3).call({ from: owner }));
+            result.set(await PaypolitanToken.methods[isRoleMethod](account3).call({from: owner}));
             result.checkIsFalse(
                 "account3 doesn't have role " + roleName + " after attempting to add it"
             );
 
             // Repeat using account6, which was never owner or roleName
-            result.set(await ProxyToken.methods[isRoleMethod](account3).call({ from: account6 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account3).call({from: account6})
+            );
             result.checkIsFalse("account3 should start off not having role " + roleName);
             result.set(
                 await expectFail(
-                    ProxyToken.methods[addRoleMethod](account3, ...addRoleParams).send({
+                    PaypolitanToken.methods[addRoleMethod](account3, ...addRoleParams).send({
                         from: account6
                     })
                 ).catch(catcher)
             );
             result.checkDidFail();
-            result.set(await ProxyToken.methods[isRoleMethod](account3).call({ from: account6 }));
+            result.set(
+                await PaypolitanToken.methods[isRoleMethod](account3).call({from: account6})
+            );
             result.checkIsFalse(
                 "account3 does not have role " + roleName + " after attempting to add it"
             );
@@ -1727,7 +1731,7 @@ describe("PaypolitanToken", () => {
             async () => {
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[addRoleMethod](account4, ...addRoleParams).send({
+                        PaypolitanToken.methods[addRoleMethod](account4, ...addRoleParams).send({
                             from: account3
                         })
                     ).catch(catcher)
@@ -1735,7 +1739,7 @@ describe("PaypolitanToken", () => {
                 result.checkDidFail();
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[removeRoleMethod](account4).send({ from: account3 })
+                        PaypolitanToken.methods[removeRoleMethod](account4).send({from: account3})
                     ).catch(catcher)
                 );
                 result.checkDidFail(
@@ -1751,7 +1755,7 @@ describe("PaypolitanToken", () => {
             async () => {
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[addRoleMethod](account3, ...addRoleParams).send({
+                        PaypolitanToken.methods[addRoleMethod](account3, ...addRoleParams).send({
                             from: owner
                         })
                     ).catch(catcher)
@@ -1761,7 +1765,7 @@ describe("PaypolitanToken", () => {
                 );
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[addRoleMethod](account4, ...addRoleParams).send({
+                        PaypolitanToken.methods[addRoleMethod](account4, ...addRoleParams).send({
                             from: account3
                         })
                     ).catch(catcher)
@@ -1771,7 +1775,7 @@ describe("PaypolitanToken", () => {
                 );
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[removeRoleMethod](account4).send({ from: account3 })
+                        PaypolitanToken.methods[removeRoleMethod](account4).send({from: account3})
                     ).catch(catcher)
                 );
                 result.checkDidFail(
@@ -1781,7 +1785,7 @@ describe("PaypolitanToken", () => {
                 );
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[removeRoleMethod](account1).send({ from: account3 })
+                        PaypolitanToken.methods[removeRoleMethod](account1).send({from: account3})
                     ).catch(catcher)
                 );
                 result.checkDidFail(
@@ -1798,18 +1802,18 @@ describe("PaypolitanToken", () => {
                 roleName,
             async () => {
                 result.set(
-                    await ProxyToken.methods[addRoleMethod](account5, ...addRoleParams).send({
+                    await PaypolitanToken.methods[addRoleMethod](account5, ...addRoleParams).send({
                         from: account1
                     })
                 );
                 result.checkTransactionOk();
                 result.set(
-                    await ProxyToken.methods[isRoleMethod](account5).call({ from: account1 })
+                    await PaypolitanToken.methods[isRoleMethod](account5).call({from: account1})
                 );
                 result.checkIsTrue("We just set this role, it should be " + roleName);
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[addRoleMethod](account6, ...addRoleParams).send({
+                        PaypolitanToken.methods[addRoleMethod](account6, ...addRoleParams).send({
                             from: account5
                         })
                     ).catch(catcher)
@@ -1819,7 +1823,7 @@ describe("PaypolitanToken", () => {
                 );
                 result.set(
                     await expectFail(
-                        ProxyToken.methods[removeRoleMethod](account6).send({ from: account5 })
+                        PaypolitanToken.methods[removeRoleMethod](account6).send({from: account5})
                     ).catch(catcher)
                 );
                 result.checkDidFail(
@@ -1828,10 +1832,130 @@ describe("PaypolitanToken", () => {
                         " should NOT have been able to remove same role."
                 );
                 result.set(
-                    await ProxyToken.methods[removeRoleMethod](account5).send({ from: account1 })
+                    await PaypolitanToken.methods[removeRoleMethod](account5).send({from: account1})
                 );
                 result.checkTransactionOk();
             }
         ).catch(catcher);
     }
+
+    //note this tests somewhat overlap test #6
+
+    if (runThisTest())
+        it("30. test Grantor tole isRole/addRole/removeRole behavior (with ownership change)", async () => {
+            if (!PaypolitanToken) return;
+            await testRoleBehavior(
+                30,
+                "grantor",
+                "isGrantor",
+                "addGrantor",
+                [false],
+                "removeGrantor"
+            ).catch(catcher);
+        });
+
+    if (runThisTest())
+        it("31. test Pauser role isRole/addRole/removeRole behavior (with ownership change)", async () => {
+            if (!PaypolitanToken) return;
+            await testRoleBehavior(31, "pauser", "isPauser", "addPauser", [], "removePauser").catch(
+                catcher
+            );
+        });
+
+    async function testPausableMethod(method, methodParams, from) {
+        // try a valid ERC20 call while not paused
+        result.set(await method(...methodParams).send({from: from}));
+        result.checkTransactionOk("Contract is not paused so this should have worked");
+
+        // pause the contract
+        result.set(await PaypolitanToken.methods.pause().send({from: owner})).catch(catcher);
+        result.checkTransactionOk();
+
+        // try  while already paused
+        result.set(await expectFail(method(...methodParams).send({from: from})).catch(catcher));
+        result.checkDidFail();
+
+        // Put things back
+        result.set(await PaypolitanToken.methods.unpause().send({from: owner}));
+        result.checkTransactionOk();
+    }
+
+    if (runThisTest())
+        it("32. test that pausable ERC20 functionality is blocked while paused", async () => {
+            if (!PaypolitanToken) return;
+
+            // Make sure account1 and account2 have some tokens so the account can transfer and be approved as spender.
+            result.set(
+                await PaypolitanToken.methods
+                    .transfer(account1, tokensToWei(100 * ONE_MILLION))
+                    .send({from: owner})
+            );
+            result.checkTransactionOk();
+            result.set(
+                await PaypolitanToken.methods
+                    .transfer(account2, tokensToWei(100 * ONE_MILLION))
+                    .send({from: owner})
+            );
+            result.checkTransactionOk();
+
+            await subtest(
+                "32a. try a valid call to transfer(), paused and not paused",
+                async () => {
+                    await testPausableMethod(
+                        PaypolitanToken.methods.transfer,
+                        [account1, tokensToWei(ONE_MILLION)],
+                        owner
+                    ).catch(catcher);
+                }
+            ).catch(catcher);
+
+            await subtest("32b. try a valid call to approve(), paused and not paused", async () => {
+                await testPausableMethod(
+                    PaypolitanToken.methods.approve,
+                    [account2, tokensToWei(ONE_MILLION)],
+                    account1
+                ).catch(catcher);
+            }).catch(catcher);
+
+            // Owner approves account 3 to spend a million
+            result.set(
+                await PaypolitanToken.methods
+                    .approve(account3, tokensToWei(ONE_MILLION))
+                    .send({from: owner})
+            );
+            result.checkTransactionOk();
+
+            await subtest(
+                "32c. try a valid call to transferFrom(), paused and not paused",
+                async () => {
+                    await testPausableMethod(
+                        PaypolitanToken.methods.transferFrom,
+                        [owner, account3, tokensToWei(ONE_MILLION)],
+                        account3
+                    ).catch(catcher);
+                }
+            ).catch(catcher);
+
+            await subtest(
+                "32d. try a valid call to increaseAllowance(), paused and not paused",
+                async () => {
+                    await testPausableMethod(
+                        PaypolitanToken.methods.increaseAllowance,
+                        [account5, tokensToWei(ONE_MILLION)],
+                        account2
+                    ).catch(catcher);
+                }
+            ).catch(catcher);
+
+            await subtest(
+                "32e. try a valid call to decreaseAllowance(), paused and not paused",
+                async () => {
+                    await testPausableMethod(
+                        PaypolitanToken.methods.decreaseAllowance,
+                        [account5, tokensToWei(ONE_MILLION)],
+                        account2
+                    ).catch(catcher);
+                }
+            ).catch(catcher);
+        });
 });
