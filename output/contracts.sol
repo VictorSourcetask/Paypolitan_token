@@ -45,7 +45,7 @@ contract Context {
     constructor () internal { }
     // solhint-disable-previous-line no-empty-blocks
 
-    function _msgSender() internal view returns (address) {
+    function _msgSender() internal view returns (address payable) {
         return msg.sender;
     }
 
@@ -471,7 +471,7 @@ contract ERC20 is Context, IERC20 {
         emit Transfer(address(0), account, amount);
     }
 
-     /**
+    /**
      * @dev Destroys `amount` tokens from `account`, reducing the
      * total supply.
      *
@@ -626,8 +626,9 @@ contract Ownable is Context {
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
     constructor () internal {
-        _owner = _msgSender();
-        emit OwnershipTransferred(address(0), _owner);
+        address msgSender = _msgSender();
+        _owner = msgSender;
+        emit OwnershipTransferred(address(0), msgSender);
     }
 
     /**
